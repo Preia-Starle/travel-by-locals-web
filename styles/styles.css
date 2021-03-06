@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+#contact {
+    width: 100%;
+    padding: 13px;
+    background-color: darkgray;
+    position: fixed;
+    bottom: 0;
+    font-weight: bold;
+    margin-top: 63px;
+}
+
+#contact li {
+    display: inline-block;
+    padding: 0 10px;
+    color: white;
+}
+
+#your-place {
+    background-color: darkgrey;
+    color: white;
+}
+
+#recommendations {
+    background-color: darkgrey;
+    color: white;
+}
+
+.form {
+    margin-left: 25px;
+    text-align: center;
+}
+
+.mdc-top-app-bar {
+    background-color:darkgrey;
+}
+
+#banner {
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#banner img {
+    width: 900px;
+    height: auto;
+    padding: 75px;
+    margin: 25px auto;
+    max-width: 100%;
+    max-height: auto;
+}
+
+.intro-text {
+    padding: 25px;
+    top: 700px;
+    width: 700px;
+    margin: 0 auto;
+    border: 3px solid white;
+    color: white;
+    background-color: darkgray;
+    font-weight: bold; 
+}
+
+
+.mdc-top-app-bar {
+    position: fixed;
+}
+
+body {
+    background-image: url("../images/city_outline.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+}
+
+.button-label {
+    color: white;
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.submit-button {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 35px;
+ 
+}
+
+.mdc-button.mdc-button--raised {
+    background-color: darkgray;
+}
+
+.instructions {
+    margin: 0 auto;
+}
+.instructions ol {
+    color: white;
+    font-weight: bold;
+    background-color: darkgray;
+    padding: 20px;
+    border: 3px solid white;
+}
+
+.instructions ol li {
+    padding: 15px;
+}
+

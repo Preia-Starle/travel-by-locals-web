@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="./styles/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="./scripts/main.js" defer></script>
+  <title>Travels By Locals</title>
+</head>
+  <body>
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" aria-label="Open navigation menu">menu</button>
+          <span class="mdc-top-app-bar__title">Travels by Locals</span>
+        </section>
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Favorite">favorite</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
+        </section>
+      </div>
+    </header>
+    <div id="banner">
+      <img src="images/japan-rooftop.jpg" alt="Rooftop of Shinjuku hotel in Japan">
+      <div class="intro-text">
+        <h2>Join the life of locals in their city, travel virtually or see for yourself when you get there.<br>
+        Immerse in the everyday life of people living in places you dream of<br> and share insights on a place you live in.</h2>
+      </div>
+      <div id="video-div">
+        <video id="bicycle-japan" width="900" height="auto" controls>
+          <source src="resources/WP_20180501_11_43_57_Pro.mp4" type=video/mp4>
+        </video>
+      </div>
+      <div id='audio-div'>
+        <audio id="intro-song" controls audio autoplay>
+          <source src="https://soundcloud.com/jasonmakesmusic/peach">Jason Nolan: Peach</source>
+        </audio>
+      </div>
+      <div class="instructions">
+        <ol>
+          <li>Share recommendations from a city you live in</li>
+          <li>Simply click a button below</li>
+          <li>Write about your experience, upload photos and videos</li>
+          <li>Check out places other local people wrote about in the top left corner menu</li>
+          <li>Enjoy travel with the locals</li>
+        </ol>
+      </div>
+    </div>
+    <div class="submit-button">
+      <button class="mdc-button mdc-button--raised">
+        <span class="mdc-button__label"><a href="./form.html" target="_blank" class="button-label">Contribute with your place</a></span>
+      </button>
+    </div>
+  </body>
+  <br>
+  <footer id="contact">
+    <ul>
+      <li>Contact</li>
+      <li>E-mail</li>
+      <li>About Me</li>
+    </ul>
+    </footer>
+</html> 
