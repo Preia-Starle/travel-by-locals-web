@@ -7,7 +7,8 @@
         <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="./styles/styles.css" rel="stylesheet">
-        <script type="text/javascript" src="./scripts/index.js"></script> 
+        <script type="text/javascript" src="./scripts/main.js" defer></script>
+        <script type="text/javascript" src="./scripts/form.js" defer></script>
         <title>Places Form</title>
     </head>
     <body> 
@@ -16,7 +17,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="username">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id">Username</span>
-          <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username">
+          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username">
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -91,8 +92,8 @@
        </button>
         <br>
         <br>
-        <button class="mdc-button mdc-button--raised">
-          <span class="mdc-button__label">Submit</span>
+        <button id="submit" class="mdc-button mdc-button--raised">
+          Submit
         </button>
         </form>
 </body>
