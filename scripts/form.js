@@ -6,6 +6,7 @@ let arr = new Array();
 
 function addData(event) {
     event.preventDefault();
+    document.getElementById("form").reset();
     arr.push( {
         username: document.getElementById("username").value,
         interests: document.getElementById("interests").value,
@@ -14,6 +15,7 @@ function addData(event) {
         activity_description: document.getElementById("activity-description").value
     });
     localStorage.setItem("localData", JSON.stringify(arr));
+    console.log("Submitted!");
     };
 
 function getData(){
