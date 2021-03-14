@@ -1,6 +1,12 @@
 let click = document.getElementById("submit");
 if (click) click.addEventListener("click", addData);
 
+/*click.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    window.location.replace("./table.html");
+    return false; 
+    });*/
+
 
 let arr = new Array();
 
@@ -10,12 +16,14 @@ function addData(event) {
     arr.push( {
         username: document.getElementById("username").value,
         interests: document.getElementById("interests").value,
-        about_me: document.getElementById("about-me").value,
+        about_me: document.getElementById("about_me").value,
         activity_type: document.getElementById("activities").value,
-        activity_description: document.getElementById("activity-description").value
+        activity_description: document.getElementById("activity_description").value
     });
     localStorage.setItem("localData", JSON.stringify(arr));
     console.log("Submitted!");
+    window.location.replace("./table.html");
+    return false; 
     };
 
 function getData(){
@@ -46,7 +54,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
         cell1.innerHTML = arr1[i].username;
         cell2.innerHTML = arr1[i].interests;
-        cell3.innerHTML = arr1[i].about-me;
+        cell3.innerHTML = arr1[i].about_me;
         cell4.innerHTML = arr1[i].activities;
         cell5.innerHTML = arr1[i].activity_description;
     }}
