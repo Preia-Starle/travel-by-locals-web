@@ -1,18 +1,10 @@
 let click = document.getElementById("submit");
 if (click) click.addEventListener("click", addData);
 
-/*click.addEventListener("click", function (evt) {
-    evt.preventDefault();
-    window.location.replace("./table.html");
-    return false; 
-    });*/
-
-
 let arr = new Array();
 
 function addData(event) {
     event.preventDefault();
-    document.getElementById("form").reset();
     arr.push( {
         username: document.getElementById("username").value,
         interests: document.getElementById("interests").value,
@@ -22,9 +14,11 @@ function addData(event) {
     });
     localStorage.setItem("localData", JSON.stringify(arr));
     console.log("Submitted!");
+    document.getElementById("form").reset();
     window.location.replace("./table.html");
-    return false; 
     };
+
+
 
 function getData(){
     let str = localStorage.getItem("localData");
