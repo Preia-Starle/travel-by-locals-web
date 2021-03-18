@@ -15,9 +15,15 @@ function addData(event) {
     localStorage.setItem("localData", JSON.stringify(arr));
     console.log("Submitted!");
     document.getElementById("form").reset();
-    window.location.replace("./table.html");
+    successPopUp();
+    setTimeout(function() { window.location.replace("./table.html");
+    }, 3000);
     };
 
+function successPopUp() {
+    const popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+};
 
 
 function getData(){
@@ -54,4 +60,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }}
 
 });
+
+
 
