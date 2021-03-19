@@ -16,8 +16,8 @@
         <h2 id="your-place">Contribute with Your Place</h2>
         <label class="mdc-text-field mdc-text-field--filled" for="username">
           <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">Username</span>
-          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username">
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" onfocus="this.value=''" value="Username" onblur="if(this.value =='') {this.value='Username'}">
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -30,8 +30,8 @@
         <br>
         <label class="mdc-text-field mdc-text-field--filled" for="interests">
           <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">Interests</span>
-          <input id="interests" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choices">
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="interests" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choices" onfocus="this.value=''" value="Interests" onblur="if(this.value =='') {this.value='Interests'}">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="interest-choices">
@@ -52,7 +52,7 @@
         <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-text-field__resizer">
-            <textarea id="about_me" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me">About Me</textarea>
+            <textarea id="about_me" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="this.value=''" value="About Me" onblur="if(this.value =='') {this.value='About Me'}">About Me</textarea>
           </span>
           <span class="mdc-line-ripple"></span>
         </label>
@@ -61,8 +61,8 @@
         <h2 id="recommendations">Recommendations:</h2>
         <label class="mdc-text-field mdc-text-field--filled" for="activity-choices">
           <span class="mdc-text-field__ripple"></span>
-          <span class="mdc-floating-label" id="my-label-id">Type of Activity</span>
-          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activity-choices" list="activity-choices">
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activity-choices" list="activity-choices" onfocus="this.value=''" value='Type of Activity' onblur="if(this.value =='') {this.value='Type of Activity'}">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="activity-choices">
@@ -80,7 +80,7 @@
           <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-text-field__resizer">
-              <textarea id="activity_description" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description">Activity Description</textarea>
+              <textarea id="activity_description" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="this.value=''" value='Activity Description' onblur="if(this.value =='') {this.value='Activity Description'}">Activity Description</textarea>
             </span>
             <span class="mdc-line-ripple"></span>
           </label>

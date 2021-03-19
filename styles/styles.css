@@ -101,17 +101,19 @@ body {
 
 .instructions {
     margin: 0 auto;
+    color: white;
 }
 .instructions ol {
     color: white;
     font-weight: bold;
     background-color: darkgray;
-    padding: 20px;
     border: 3px solid white;
+    text-align: left;
 }
 
 .instructions ol li {
     padding: 15px;
+    margin-left: 5%;
 }
 
 #audio-div p {
@@ -129,6 +131,10 @@ body {
 
 .table {
     width: 100%;
+}
+
+.table tr {
+    font-weight: bold;
 }
 
 /* PopUp design example from W3schools */

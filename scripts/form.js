@@ -51,12 +51,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
         let cell3 = r.insertCell();
         let cell4 = r.insertCell();
         let cell5 = r.insertCell();
+        let cell6 = r.insertCell();
+        let cell7 = r.insertCell();
 
         cell1.innerHTML = arr1[i].username;
-        cell2.innerHTML = arr1[i].interests;
-        cell3.innerHTML = arr1[i].about_me;
-        cell4.innerHTML = arr1[i].activities;
-        cell5.innerHTML = arr1[i].activity_description;
+        cell2.innerHTML = arr1[i].profile_picture;
+        cell3.innerHTML = arr1[i].interests;
+        cell4.innerHTML = arr1[i].about_me;
+        cell5.innerHTML = arr1[i].activities;
+        cell6.innerHTML = arr1[i].activity_description;
+        cell7.innerHTML = arr1[i].pictures;
     }}
 
 });
