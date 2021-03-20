@@ -40,25 +40,23 @@
 #banner {
     text-align: center;
     overflow: hidden;
-    display: flex;
-    align-items: center;
+    display: inline-flexbox;
     flex-wrap: wrap;
 }
 
 #banner img {
     width: 800px;
-    padding-top: 2%;
     height: auto;
-    margin: 25px auto;
+    margin-top: 3%;
     max-width: 100%;
     max-height: auto;
 }
 
 .intro-text {
-    padding: 1%;
-    top: 700px;
-    width: 700px;
     margin: 0 auto;
+    padding: 1%;
+    width: 800px;
+    height: 350px;
     border: 3px solid white;
     color: white;
     background-color: darkgray;
@@ -100,8 +98,14 @@ body {
 }
 
 .instructions {
-    margin: 0 auto;
+    width: 800px;
+    height: 400px;
     color: white;
+    font-size: large;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: auto;
+
 }
 .instructions ol {
     color: white;
@@ -122,11 +126,10 @@ body {
 
 #video-div {
     max-width: 100%;
-    padding-top: 3%;
     max-height: auto;
     flex-wrap: wrap;
-    margin: 25px auto;
-
+    margin: 0 auto;
+    padding: 1%;
 }
 
 .table {
