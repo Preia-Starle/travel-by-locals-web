@@ -13,6 +13,7 @@ function addData(event) {
         activity_type: document.getElementById("activities").value,
         activity_description: document.getElementById("activity_description").value
     });
+    console.log(arr);
     localStorage.setItem("localData", JSON.stringify(arr));
     console.log("Submitted!");
     document.getElementById("form").reset();
