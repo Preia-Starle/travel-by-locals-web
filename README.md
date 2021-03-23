@@ -4,7 +4,7 @@
 Current features:
 - responsive introductory main page (basic styling + image, video, song, text)
 - button to redirect to a form
-- form to GET user input
+- interactive form to GET user input
 - submit button to save data to local storage
 - successful submit popup alert + timer for redirect 
 - onsubmit redirect to display information for the user to review
@@ -12,7 +12,6 @@ Current features:
 - dummy button to save user input into a database
 
 Backlog:
-- add a field "city" to the form
 - add a feature to save images and videos from the form (to local storage -(5MB) limit vs. move the option to a later step - save into a database directly)
 - make a database connection
 - save user input into a database
