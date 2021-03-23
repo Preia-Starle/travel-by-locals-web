@@ -8,7 +8,7 @@ Current features:
 - submit button to save data to local storage
 - successful submit popup alert + timer for redirect 
 - onsubmit redirect to display information for the user to review
-- button to clear storage and go back to the main page (and repeat if desired)
+- button to clear storage and go back to the main page (and repeat the process if desired)
 - dummy button to save user input into a database
 
 Backlog:
