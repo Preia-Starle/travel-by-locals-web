@@ -7,6 +7,7 @@ function addData(event) {
     event.preventDefault();
     arr.push( {
         username: document.getElementById("username").value,
+        city: document.getElementById("city").value,
         interests: document.getElementById("interests").value,
         about_me: document.getElementById("about_me").value,
         activity_type: document.getElementById("activities").value,
@@ -53,14 +54,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
         let cell5 = r.insertCell();
         let cell6 = r.insertCell();
         let cell7 = r.insertCell();
+        let cell8 = r.insertCell();
 
         cell1.innerHTML = arr1[i].username;
-        cell2.innerHTML = arr1[i].profile_picture;
-        cell3.innerHTML = arr1[i].interests;
-        cell4.innerHTML = arr1[i].about_me;
-        cell5.innerHTML = arr1[i].activities;
-        cell6.innerHTML = arr1[i].activity_description;
-        cell7.innerHTML = arr1[i].pictures;
+        cell2.innerHTML = arr1[i].city;
+        cell3.innerHTML = arr1[i].profile_picture;
+        cell4.innerHTML = arr1[i].interests;
+        cell5.innerHTML = arr1[i].about_me;
+        cell6.innerHTML = arr1[i].activities;
+        cell7.innerHTML = arr1[i].activity_description;
+        cell8.innerHTML = arr1[i].pictures;
     }}
 
 });
