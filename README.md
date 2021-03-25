@@ -12,7 +12,8 @@ Current features:
 - dummy button to save user input into a database
 
 Backlog:
-- add a feature to save images and videos from the form (to local storage -(5MB) limit vs. move the option to a later step - save into a database directly)
+- add fields to form for closer specitication of recommendations (e.g.: exact location input using location-based search engine)
+- add a feature to save images and videos from the form (2phase: to local storage first(5MB) limit + in table display option to add more and save all to databse as per current design vs. save into a database directly - PREFERRED - simpler)
 - make a database connection
 - save user input into a database
 - create form dropdowns based on previous users' input
