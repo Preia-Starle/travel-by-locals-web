@@ -16,10 +16,10 @@ function addData(event) {
         venue: document.getElementById("venue").value,
         activity_description: document.getElementById("activity_description").value
     });
-    if (oldArr.length > 0) {
-        arr.push(oldArr[0]);
+    if (arr.length > 0) {
+        oldArr.push(arr[0]);
     };
-    localStorage.setItem("localData", JSON.stringify(arr));
+    localStorage.setItem("localData", JSON.stringify(oldArr));
     document.getElementById("form").reset();
     successPopUp();
     setTimeout(function() { window.location.replace("./table.html");
