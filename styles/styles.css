@@ -185,3 +185,29 @@ body {
     animation: fadeIn 1s
   }
 
+
+  .result {
+      box-sizing: border-box;
+      border: 3px solid black;
+      width: 50%;
+  }
+
+  .map {
+      width: 50%;
+  }
+
+  .result tr {
+      display: block;
+      float: left;
+  }
+
+  .result td {
+      display: block;
+  }
+
+  #delete {
+      float: right;
+  }
+
+
+
