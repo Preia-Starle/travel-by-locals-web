@@ -23,7 +23,7 @@ function addData(event) {
     document.getElementById("form").reset();
     successPopUp();
     setTimeout(function() { window.location.replace("./table.html");
-    }, 0);
+    }, 2000);
     };
 
 let input = document.getElementById('venue');
