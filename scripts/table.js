@@ -40,15 +40,53 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     <td> ${arr1[i].interests} </td> 
                     <td> ${arr1[i].about_me} </td> 
                     <td> ${arr1[i].activity_type} </td> 
-                    <td> ${arr1[i].venue} </td> 
+                    <td id="venueInput${[i]}"> ${arr1[i].venue} </td> 
                     <td> ${arr1[i].activity_description} </td> 
                     <td> ${arr1[i].pictures} </td>
                 </tr> 
             </table> 
-            <div class='map'> 
+            <div class="map" style="position: relative;overflow: hidden;height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class='material-icons' id='delete'>clear</span> 
                 <span class='material-icons' id='edit'>create</span> 
         </div>`;
+        let venue = document.getElementById("venueInput" + i).innerHTML;
+            if (venue) {
+                initMap(venue, i);  
+            } 
         };});
+
+        const geocoder = new google.maps.Geocoder();
+ 
+
+        function initMap(venue, i) {
+            let map;
+            map = new google.maps.Map(document.getElementById("map" + i), {
+            zoom: 8,
+            center: { lat: -34.397, lng: 150.644 },
+          });
+          codeVenue(geocoder, map, venue);
+        }
+
+        function codeVenue (geocoder, map, venue) {
+          geocoder.geocode({address: venue}, function(results, status) {
+            if (status === "OK") {
+              map.setCenter(results[0].geometry.location);
+              let marker = new google.maps.Marker({
+                map: map,
+                position: results[0].geometry.location
+              });
+            } else {
+              alert("Geocode was not successful for the following reason:" + status);
+            }
+          });
+        }
+
+        
+
+       
+                    
+                
+
+ 
         
