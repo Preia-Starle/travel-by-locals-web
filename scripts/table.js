@@ -13,14 +13,15 @@ function formRedirect() {
 window.location.replace("./form.html");
 };
 
-window.addEventListener('DOMContentLoaded', (event) => {
-    let arr1 = new Array();
-    arr1 = JSON.parse(localStorage.getItem("localData"));
-    let results = document.getElementById("results");
-    results.innerHTML = "";
-        for (let i = 0; i < arr1.length; i++) {
-            results.innerHTML += 
-            `<div class="result"> 
+let arr1 = new Array();
+
+function displayResults() {
+  arr1 = JSON.parse(localStorage.getItem("localData"));
+  let results = document.getElementById("results");
+  results.innerHTML = "";
+    for (let i = 0; i < arr1.length; i++) {
+        results.innerHTML += 
+          `<div class="result"> 
             <table class="table" id="table"> 
             <tr id="data"> 
                     <td>Username:</td> 
@@ -45,42 +46,49 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     <td> ${arr1[i].pictures} </td>
                 </tr> 
             </table> 
-            <div class="map" style="position: relative;overflow: hidden;height: 500px;width: 500px;" id="map${[i]}">
+            <div class="map" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class='material-icons' id='delete'>clear</span> 
                 <span class='material-icons' id='edit'>create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
-            if (venue) {
-                initMap(venue, i);  
-            } 
-        };});
+        if (venue) {
+          initMap(venue, i);  
+            };
+        }; 
+      };  
+        
+window.addEventListener('DOMContentLoaded', (event) => { 
+  displayResults();
+      }); 
 
-        const geocoder = new google.maps.Geocoder();
- 
+const geocoder = new google.maps.Geocoder();
 
-        function initMap(venue, i) {
-            let map;
-            map = new google.maps.Map(document.getElementById("map" + i), {
-            zoom: 8,
-            center: { lat: -34.397, lng: 150.644 },
-          });
-          codeVenue(geocoder, map, venue);
-        }
+function initMap(venue, i) {
+  let map;
+  map = new google.maps.Map(document.getElementById("map" + i), {
+    zoom: 8,
+    center: { lat: -34.397, lng: 150.644 },
+      });
+      codeVenue(geocoder, map, venue);
+    };
 
-        function codeVenue (geocoder, map, venue) {
-          geocoder.geocode({address: venue}, function(results, status) {
-            if (status === "OK") {
-              map.setCenter(results[0].geometry.location);
-              let marker = new google.maps.Marker({
-                map: map,
-                position: results[0].geometry.location
-              });
-            } else {
-              alert("Geocode was not successful for the following reason:" + status);
-            }
-          });
-        }
+function codeVenue (geocoder, map, venue) {
+  geocoder.geocode({address: venue}, function(results, status) {
+    if (status === "OK") {
+      map.setCenter(results[0].geometry.location);
+      let marker = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
+        });
+        } else {
+          alert("Geocode was not successful for the following reason:" + status);
+          }
+        });
+      };    
+
+
+  
 
         
 
