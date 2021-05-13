@@ -46,17 +46,19 @@ function displayResults() {
                     <td> ${arr1[i].pictures} </td>
                 </tr> 
             </table> 
-            <div class="map" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
+            <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
+            </div>
+            <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class='material-icons' id='delete'>clear</span> 
                 <span class='material-icons' id='edit'>create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
-        if (venue) {
+        if(venue) {
           initMap(venue, i);  
             };
-        }; 
-      };  
+        };  
+  };  
         
 window.addEventListener('DOMContentLoaded', (event) => { 
   displayResults();
@@ -64,13 +66,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 const geocoder = new google.maps.Geocoder();
 
+let map;
 function initMap(venue, i) {
-  let map;
-  map = new google.maps.Map(document.getElementById("map" + i), {
-    zoom: 8,
-    center: { lat: -34.397, lng: 150.644 },
-      });
+  let maps = document.getElementsByClassName("maps");
+  let mapId = "";
+  for(let i = 0; i < maps.length; i++) {
+    mapId = document.getElementById(maps[i].id);
+    map = new google.maps.Map(mapId, {
+      zoom: 8,
+      center: { lat: -34.397, lng: 150.644 },
+      })
       codeVenue(geocoder, map, venue);
+    };
     };
 
 function codeVenue (geocoder, map, venue) {
@@ -86,6 +93,8 @@ function codeVenue (geocoder, map, venue) {
           }
         });
       };    
+
+
 
 
   
