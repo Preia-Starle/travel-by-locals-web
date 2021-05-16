@@ -55,7 +55,7 @@ function displayResults() {
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
-          initMap(venue, i);  
+          setTimeout(initMap(venue, i));  
             };
         };  
   };  
@@ -64,21 +64,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
   displayResults();
       }); 
 
+let map;
 const geocoder = new google.maps.Geocoder();
 
-let map;
 function initMap(venue, i) {
   let maps = document.getElementsByClassName("maps");
   let mapId = "";
   for(let i = 0; i < maps.length; i++) {
+    setTimeout(function() {
     mapId = document.getElementById(maps[i].id);
     map = new google.maps.Map(mapId, {
       zoom: 8,
       center: { lat: -34.397, lng: 150.644 },
       })
       codeVenue(geocoder, map, venue);
-    };
-    };
+    }, 2000 * i)
+  }
+  }
+
 
 function codeVenue (geocoder, map, venue) {
   geocoder.geocode({address: venue}, function(results, status) {
@@ -90,20 +93,5 @@ function codeVenue (geocoder, map, venue) {
         });
         } else {
           alert("Geocode was not successful for the following reason:" + status);
-          }
-        });
-      };    
-
-
-
-
-  
-
-        
-
-       
-                    
-                
-
- 
-        
+          };
+        })}
