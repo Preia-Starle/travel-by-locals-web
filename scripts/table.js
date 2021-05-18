@@ -21,7 +21,7 @@ function displayResults() {
   results.innerHTML = "";
     for (let i = 0; i < arr1.length; i++) {
         results.innerHTML += 
-          `<div class="result"> 
+          `<div class="result" id="result"> 
             <table class="table" id="table"> 
             <tr id="data"> 
                     <td>Username:</td> 
@@ -50,48 +50,66 @@ function displayResults() {
             </div>
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
-                <span class='material-icons' id='delete'>clear</span> 
-                <span class='material-icons' id='edit'>create</span> 
+                <span class="material-icons" id="delete" onclick="deleteItem(${[i]})">clear</span> 
+                <span class="material-icons" id="edit">create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
-          setTimeout(initMap(venue, i));  
+          initMap(venue, i); 
             };
         };  
   };  
         
 window.addEventListener('DOMContentLoaded', (event) => { 
   displayResults();
+  //let deleteButton = document.getElementById("delete");
+  //if(deleteButton) deleteButton.addEventListener("click", deleteItem(i));
       }); 
 
-let map;
-const geocoder = new google.maps.Geocoder();
-
-function initMap(venue, i) {
+  let map;
+  const geocoder = new google.maps.Geocoder();
   let maps = document.getElementsByClassName("maps");
   let mapId = "";
-  for(let i = 0; i < maps.length; i++) {
-    setTimeout(function() {
-    mapId = document.getElementById(maps[i].id);
-    map = new google.maps.Map(mapId, {
-      zoom: 8,
-      center: { lat: -34.397, lng: 150.644 },
-      })
-      codeVenue(geocoder, map, venue);
-    }, 2000 * i)
-  }
-  }
 
+  function initMap(venue, i) {
+    for(let i = 0; i < maps.length; i++) {
+      setTimeout(function() {
+      mapId = document.getElementById(maps[i].id);
+      map = new google.maps.Map(mapId, {
+        zoom: 8,
+        center: { lat: -34.397, lng: 150.644 },
+        })
+        /*codeVenue(geocoder, map, venue, i);*/
+        }, 2000 * i)
+        }
+        }
 
-function codeVenue (geocoder, map, venue) {
-  geocoder.geocode({address: venue}, function(results, status) {
-    if (status === "OK") {
-      map.setCenter(results[0].geometry.location);
-      let marker = new google.maps.Marker({
-        map: map,
-        position: results[0].geometry.location
-        });
-        } else {
-          alert("Geocode was not successful for the following reason:" + status);
-          };
-        })}
+  /*function codeVenue (geocoder, map, venue, i) {
+    for(let i = 0; i < maps.length; i++) {
+      setTimeout(geocoder.geocode({address: venue}, function(results, status) {
+        if (status === "OK") {
+          map.setCenter(results[0].geometry.location);
+          let marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+            });
+            } else {
+              alert("Geocode was not successful for the following reason:" + status);
+              }
+            }), 2000 * i)
+          }
+        }*/
+  
+
+  function deleteItem(i) {
+    deletePopUp();
+    arr1 = JSON.parse(localStorage.getItem("localData"));
+    arr1.splice(i, 1);
+    localStorage.setItem("localData", JSON.stringify(arr1));
+    displayResults();
+        }
+
+  /*function deletePopUp() {
+    const deletePopup = document.getElementById("deletePopup");
+    deletePopup.classList.toggle("show");
+};*/
