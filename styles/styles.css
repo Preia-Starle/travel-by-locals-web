@@ -149,6 +149,16 @@ body {
     display: inline-block;
     cursor: pointer;
   }
+
+  #deletePopupDiv {
+      float: right;
+      /*position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;*/
+  }
   
   /* The actual popup (appears on top) */
   .popup .popuptext {

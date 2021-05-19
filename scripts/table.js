@@ -50,7 +50,7 @@ function displayResults() {
             </div>
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
-                <span class="material-icons" id="delete" onclick="deleteItem(${[i]})">clear</span> 
+                <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
                 <span class="material-icons" id="edit">create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
@@ -99,17 +99,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
             }), 2000 * i)
           }
         }*/
-  
+
+  function deletePopUp() {
+    let deletePopup = document.getElementById("deletePopup");
+    deletePopup.classList.toggle("show");
+    let yes = document.getElementById("yes");
+    let no = document.getElementById("no");
+    if(yes) yes.addEventListener("click", deleteItem);
+    if(no) no.addEventListener("click", pageRefresh);
+  }
 
   function deleteItem(i) {
-    deletePopUp();
     arr1 = JSON.parse(localStorage.getItem("localData"));
     arr1.splice(i, 1);
     localStorage.setItem("localData", JSON.stringify(arr1));
     displayResults();
         }
 
-  /*function deletePopUp() {
-    const deletePopup = document.getElementById("deletePopup");
-    deletePopup.classList.toggle("show");
-};*/
+  function pageRefresh() {
+    window.location.reload();
+  }
