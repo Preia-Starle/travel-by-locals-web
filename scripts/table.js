@@ -55,50 +55,50 @@ function displayResults() {
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
-          initMap(venue, i); 
+          initMap(venue, i);
             };
         };  
   };  
         
 window.addEventListener('DOMContentLoaded', (event) => { 
   displayResults();
-  //let deleteButton = document.getElementById("delete");
-  //if(deleteButton) deleteButton.addEventListener("click", deleteItem(i));
-      }); 
+      }) 
 
   let map;
-  const geocoder = new google.maps.Geocoder();
+  let geocoder = new google.maps.Geocoder();
   let maps = document.getElementsByClassName("maps");
   let mapId = "";
+  let markersArr = [];
+  let delay = 100;
 
-  function initMap(venue, i) {
+
+  function initMap(venue, i, j) {
     for(let i = 0; i < maps.length; i++) {
       setTimeout(function() {
       mapId = document.getElementById(maps[i].id);
       map = new google.maps.Map(mapId, {
         zoom: 8,
         center: { lat: -34.397, lng: 150.644 },
-        })
-        /*codeVenue(geocoder, map, venue, i);*/
-        }, 2000 * i)
-        }
-        }
-
-  /*function codeVenue (geocoder, map, venue, i) {
-    for(let i = 0; i < maps.length; i++) {
-      setTimeout(geocoder.geocode({address: venue}, function(results, status) {
-        if (status === "OK") {
+        });
+      for (let j = 0; j < maps.length; j++) {
+        geocoder.geocode({address: venue}, function(results, status) {
+          if (status === "OK") {
           map.setCenter(results[0].geometry.location);
-          let marker = new google.maps.Marker({
+          markersArr = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
             });
-            } else {
-              alert("Geocode was not successful for the following reason:" + status);
+          } else if (status == "OVER_QUERY_LIMIT") {
+            delay++;
+          } else {
+            alert("Geocode was not successful for the following reason:" + status);
               }
-            }), 2000 * i)
-          }
-        }*/
+            })
+        }
+        }, 2000 * i)
+        }
+    }
+        
 
   function deletePopUp() {
     let deletePopup = document.getElementById("deletePopup");
@@ -119,3 +119,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
   function pageRefresh() {
     window.location.reload();
   }
+
+  let editButton = document.getElementById("edit");
+  if(editButton) editButton.addEventListener("click", editItem);
+
+
+  function editItem(i) {
+    window.location.replace("./form.html");
+    arr1 = JSON.parse(localStorage.getItem("localData"));
+    let itemToEdit = arr1.splice(i, 1);
+      itemToEdit.push( {
+        username: document.getElementById("username").value,
+        city: document.getElementById("city").value,
+        interests: document.getElementById("interests").value,
+        about_me: document.getElementById("about_me").value,
+        activity_type: document.getElementById("activities").value,
+        venue: document.getElementById("venue").value,
+        activity_description: document.getElementById("activity_description").value
+    });
+    }
