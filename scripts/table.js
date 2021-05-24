@@ -51,7 +51,7 @@ function displayResults() {
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
-                <span class="material-icons" id="edit">create</span> 
+                <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
@@ -120,21 +120,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
     window.location.reload();
   }
 
-  let editButton = document.getElementById("edit");
-  if(editButton) editButton.addEventListener("click", editItem);
-
-
   function editItem(i) {
-    window.location.replace("./form.html");
     arr1 = JSON.parse(localStorage.getItem("localData"));
-    let itemToEdit = arr1.splice(i, 1);
-      itemToEdit.push( {
-        username: document.getElementById("username").value,
-        city: document.getElementById("city").value,
-        interests: document.getElementById("interests").value,
-        about_me: document.getElementById("about_me").value,
-        activity_type: document.getElementById("activities").value,
-        venue: document.getElementById("venue").value,
-        activity_description: document.getElementById("activity_description").value
-    });
+    let itemToEdit = arr1.slice(i);
+    localStorage.removeItem(itemToEdit);
+    for(i = 0; i < itemToEdit.length; i++) {
+        let usernameToEdit = itemToEdit[i].username;
+        let cityToEdit = itemToEdit[i].city;
+        let interestsToEdit = itemToEdit[i].interests;
+        let aboutMeToEdit = itemToEdit[i].about_me;
+        let activityTypeToEdit = itemToEdit[i].activity_type;
+        let venueToEdit = itemToEdit[i].venue;
+        let activityDescriptionToEdit = itemToEdit[i].activity_description;
+        window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;
     }
+    
+
+    
+}
+  
+        
