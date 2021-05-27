@@ -122,21 +122,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function editItem(i) {
     arr1 = JSON.parse(localStorage.getItem("localData"));
-    let itemToEdit = arr1.slice(i);
-    localStorage.removeItem(itemToEdit);
-    for(i = 0; i < itemToEdit.length; i++) {
-        let usernameToEdit = itemToEdit[i].username;
-        let cityToEdit = itemToEdit[i].city;
-        let interestsToEdit = itemToEdit[i].interests;
-        let aboutMeToEdit = itemToEdit[i].about_me;
-        let activityTypeToEdit = itemToEdit[i].activity_type;
-        let venueToEdit = itemToEdit[i].venue;
-        let activityDescriptionToEdit = itemToEdit[i].activity_description;
-        window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;
-    }
-    
-
-    
+    let itemToEdit = arr1[i];
+    arr1.splice(i, 1);
+    localStorage.setItem("localData", JSON.stringify(arr1));
+    let usernameToEdit = itemToEdit.username;
+    let cityToEdit = itemToEdit.city;
+    let interestsToEdit = itemToEdit.interests;
+    let aboutMeToEdit = itemToEdit.about_me;
+    let activityTypeToEdit = itemToEdit.activity_type;
+    let venueToEdit = itemToEdit.venue;
+    let activityDescriptionToEdit = itemToEdit.activity_description;
+    window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;   
 }
   
         

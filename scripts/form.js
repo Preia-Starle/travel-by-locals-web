@@ -71,17 +71,17 @@ function getUrlParameter(sParam) {
 
 function loadPreviousInput() {
     let username = getUrlParameter("username");
-    document.getElementById("username").value = username;
+    if (username) {document.getElementById("username").value = username};
     let city = getUrlParameter("city");
-    document.getElementById("city").value = city;
+    if (city) {document.getElementById("city").value = city};
     let interests = getUrlParameter("interests");
-    document.getElementById("interests").value = interests;
+    if (interests) {document.getElementById("interests").value = interests};
     let aboutMe = getUrlParameter("about_me");
-    document.getElementById("about_me").innerHTML = aboutMe;
+    if (aboutMe) {document.getElementById("about_me").innerHTML = aboutMe};
     let activityType = getUrlParameter("activity_type");
-    document.getElementById("activities").value = activityType;
+    if (activityType) {document.getElementById("activities").value = activityType};
     let venue = getUrlParameter("venue");
-    document.getElementById("venue").value = venue;
+    if (venue) {document.getElementById("venue").value = venue};
     let activityDescription = getUrlParameter("activity_description");
-    document.getElementById("activity_description").innerHTML = activityDescription;
+    if (activityDescription) {document.getElementById("activity_description").innerHTML = activityDescription};
 }
