@@ -13,12 +13,13 @@
 <body>
     <div id="results">
     </div>
-    <div class="popup" id="deletePopupDiv">
-    <span class="popuptext" id="deletePopup">
-    Are you sure you wanna delete this?
-    <button class="mdc-button mdc-button--raised" id="yes">Yes</button>
-    <button class="mdc-button mdc-button--raised" id="no">No</button> 
-    </span>
+    <div class="modal">
+        <span class="material-icons" id="closeBtn">clear</span>
+        <div class="modalContent">
+        <p>Are you sure you wanna delete this?</p>
+            <button class="mdc-button mdc-button--raised" id="yes">Yes</button>
+            <button class="mdc-button mdc-button--raised" id="no">No</button> 
+        </div>
     </div>
     <button id="saveToDatabase" class="mdc-button mdc-button--raised">
         Save and share

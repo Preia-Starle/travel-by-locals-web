@@ -56,13 +56,14 @@ function displayResults() {
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
           initMap(venue, i);
-            };
-        };  
-  };  
+            }; 
+  }
+}
         
 window.addEventListener('DOMContentLoaded', (event) => { 
   displayResults();
       }) 
+
 
   let map;
   let geocoder = new google.maps.Geocoder();
@@ -70,27 +71,26 @@ window.addEventListener('DOMContentLoaded', (event) => {
   let mapId = "";
   let markersArr = [];
   let delay = 100;
-
-
-  function initMap(venue, i, j) {
+  
+  function initMap(venue, i) {
     for(let i = 0; i < maps.length; i++) {
       setTimeout(function() {
-      mapId = document.getElementById(maps[i].id);
+      mapId = document.getElementById(maps[i].id) || [];
       map = new google.maps.Map(mapId, {
         zoom: 8,
         center: { lat: -34.397, lng: 150.644 },
         });
-      for (let j = 0; j < maps.length; j++) {
-        geocoder.geocode({address: venue}, function(results, status) {
-          if (status === "OK") {
+    for (let j = 0; j < maps.length; j++) {
+      geocoder.geocode({address: venue}, function(results, status) {
+        if (status === "OK") {
           map.setCenter(results[0].geometry.location);
           markersArr = new google.maps.Marker({
             map: map,
             position: results[0].geometry.location
             });
-          } else if (status == "OVER_QUERY_LIMIT") {
+        } else if (status == "OVER_QUERY_LIMIT") {
             delay++;
-          } else {
+        } else {
             alert("Geocode was not successful for the following reason:" + status);
               }
             })
@@ -100,12 +100,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
         
 
-  function deletePopUp() {
-    let deletePopup = document.getElementById("deletePopup");
-    deletePopup.classList.toggle("show");
+  function deletePopUp(i) {
+    let modal = document.querySelector(".modal");
+    let closeBtn = document.getElementById("closeBtn");
+    modal.style.display = "block";
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
     let yes = document.getElementById("yes");
     let no = document.getElementById("no");
-    if(yes) yes.addEventListener("click", deleteItem);
+    if(yes) yes.addEventListener("click", deleteItem(i));
     if(no) no.addEventListener("click", pageRefresh);
   }
 
@@ -133,6 +137,4 @@ window.addEventListener('DOMContentLoaded', (event) => {
     let venueToEdit = itemToEdit.venue;
     let activityDescriptionToEdit = itemToEdit.activity_description;
     window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;   
-}
-  
-        
+  }
