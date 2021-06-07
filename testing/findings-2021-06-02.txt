@@ -1,0 +1,32 @@
+- S1 table.html - submitting non-existend Venue ("asdfrrqwer") results in repeated messages with "Geocode was not successful for the following reason:ZERO_RESULTS"
+    #1 proper error validation missing
+    #2 why there are so many errors shown?
+K: Errors are produced by and native to Geocoder, do you want me to enable submitting non-existent Venue if entered by a user or?
+- S1 - table.html - Click Edit, then hit Back in the browser. Edited record disapeared.
+- S1 - form.html - usability - Edit - missing Cancel button
+K: These two above are caused by the same thing - functionality is set in a way that the record is deleted from local storage right after user selects "yes" from dialog box and there is no way back. 
+I have identified this issue(4th in my list - accidentaly wrote "on delete item" instead of "edit item" my bad :) and is next on the list for the fix as adding option to revert change.
+- S2 - table.html - submitting empty or single letter Venue results in guess of the location, user expects error message
+- S2 - form.html - edit - all characters outside the standard set are shown as Unicode encoded strings (try any czech letter, apostrophe, space, etc.)
+K: Identified. Overlap with the 1st issue on my list. To be encoded.
+- S2 - table.html - About Me and Activity Description - multi-line text is not shown properly.
+- S2 - form.html - submitting empty form is allowed - what are the required fields? Empty submisions should not get accepted.
+- S2 - table.html - any field - submitting very long text - text is not wrapper properly in the detailed table view. Either wrapping to another line or elippsis.
+- S3 - form.html - get rid of the unused elements (upload your profile pic, upload pictures)
+K: I am still considering utilizing it.
+- S3 - homepage - the image is too big and down-scaled by the browser (increases the load time)
+K: Down-scaling is intentional to accommodate different screen sizes. Should this be omitted?
+- S3 - table.html - X and Pen icons - mouse should change to 'Hand' and not be a pointer
+- S3 - usability issue - how can I get directly to the table of contributions?
+- S3 - form.html - usability - what's the difference between My City and Venue? Is My City better place for the map related popup?
+K: My City is the city where you live and Venue is a specific place you are recommending from the city (like gallery or restaurant). I will make a more descriptive title for each and that should sort it out. If you are suggesting adding a functionality - let's discuss.
+- S3 - form.html - It's strongly recommended to have max field length for any given field. Validations both on the form level and also when processing submitted data.
+- S3 - table.html - detail panel - it's too long, there is a lot of empty space below the map
+- S3 - table.html - Delete dialog - X is outside of the dialog on bigger screens
+- S3 - table.html - Delete dialog - hitting No strangely clears some maps
+- S3 - table.html - Had two submissions with "Venue+Cymru%2C+Penrhyn+Crescent%2C+Llandudno%2C+Velk%C3%A1+Brit%C3%A1nie" and "Liverpool, Velká Británie". Second map had two pins in it pointing to location #1 and #2. Can't easily reproduce.
+K: I understand that this is a problem related to encoding identified above? Or you mean that you hit Edit and then left the location that you meant to edit and added another one so you had two locatios in the field Venue? I will need clarification on this one.
+- S4 - table.html - usability suggestion - can those detail panels auto-arrange and can I have more then one on one line? Think of a list of goods on Amazon.
+- S4 - table.html - usability suggestion - can map occupy the width of the panel?
+- S4 - homepage - favicon is missing
+- S4 - form.html - visual problem - hitting Submit clears the value, though data is submitted - it's confusing to the user

@@ -47,15 +47,15 @@ function displayResults() {
                 </tr> 
             </table> 
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
-            </div>
-            <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
                 <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span> 
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
-          initMap(venue, i);
+          setTimeout(function() {
+            initMap(venue, i);
+          }, 1000 * i)
             }; 
   }
 }
@@ -65,39 +65,29 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }) 
 
 
-  let map;
-  let geocoder = new google.maps.Geocoder();
-  let maps = document.getElementsByClassName("maps");
-  let mapId = "";
-  let markersArr = [];
-  let delay = 100;
-  
-  function initMap(venue, i) {
-    for(let i = 0; i < maps.length; i++) {
-      setTimeout(function() {
-      mapId = document.getElementById(maps[i].id) || [];
-      map = new google.maps.Map(mapId, {
-        zoom: 8,
-        center: { lat: -34.397, lng: 150.644 },
-        });
-    for (let j = 0; j < maps.length; j++) {
-      geocoder.geocode({address: venue}, function(results, status) {
-        if (status === "OK") {
-          map.setCenter(results[0].geometry.location);
-          markersArr = new google.maps.Marker({
-            map: map,
-            position: results[0].geometry.location
-            });
-        } else if (status == "OVER_QUERY_LIMIT") {
-            delay++;
-        } else {
-            alert("Geocode was not successful for the following reason:" + status);
-              }
-            })
+let map;
+ 
+function initMap(venue, i) {
+    let mapId = "";
+    let geocoder = new google.maps.Geocoder();
+    let markersArr = [];
+    mapId = document.getElementById("map" + i) || [];
+    map = new google.maps.Map(mapId, {
+      zoom: 8,
+      center: { lat: -34.397, lng: 150.644 },
+      });
+    geocoder.geocode({address: venue}, function(results, status) {
+      if (status === "OK") {
+        map.setCenter(results[0].geometry.location);
+        markersArr = new google.maps.Marker({
+          map: map,
+          position: results[0].geometry.location
+          });
+      } else {
+          alert("Geocode was not successful for the following reason:" + status);
+            }
+          })  
         }
-        }, 2000 * i)
-        }
-    }
         
 
   function deletePopUp(i) {
