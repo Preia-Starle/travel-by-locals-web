@@ -49,7 +49,15 @@ function displayResults() {
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 
                 <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
-                <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span> 
+                <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span>
+                <div class="modal" id="modal${[i]}">
+                <div class="modalContent">
+                <span class="material-icons" id="closeBtn${[i]}">clear</span>
+                <p>Are you sure you wanna delete this?</p>
+                    <button class="mdc-button mdc-button--raised" onclick="deleteItem(${[i]})">Yes</button>
+                    <button class="mdc-button mdc-button--raised" onclick="pageRefresh()">No</button>  
+                </div>
+            </div>
         </div>`;
         let venue = document.getElementById("venueInput" + i).innerHTML;
         if(venue) {
@@ -68,63 +76,59 @@ window.addEventListener('DOMContentLoaded', (event) => {
 let map;
  
 function initMap(venue, i) {
-    let mapId = "";
-    let geocoder = new google.maps.Geocoder();
-    let markersArr = [];
-    mapId = document.getElementById("map" + i) || [];
-    map = new google.maps.Map(mapId, {
-      zoom: 8,
-      center: { lat: -34.397, lng: 150.644 },
+  let mapId = "";
+  let geocoder = new google.maps.Geocoder();
+  let markersArr = [];
+  mapId = document.getElementById("map" + i) || [];
+  map = new google.maps.Map(mapId, {
+    zoom: 8,
+    center: { lat: -34.397, lng: 150.644 },
+  });
+  geocoder.geocode({ address: venue }, function (results, status) {
+    if (status === "OK") {
+      map.setCenter(results[0].geometry.location);
+      markersArr = new google.maps.Marker({
+        map: map,
+        position: results[0].geometry.location
       });
-    geocoder.geocode({address: venue}, function(results, status) {
-      if (status === "OK") {
-        map.setCenter(results[0].geometry.location);
-        markersArr = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-          });
-      } else {
-          alert("Geocode was not successful for the following reason:" + status);
-            }
-          })  
-        }
-        
-
-  function deletePopUp(i) {
-    let modal = document.querySelector(".modal");
-    let closeBtn = document.getElementById("closeBtn");
-    modal.style.display = "block";
-    closeBtn.onclick = function() {
-      modal.style.display = "none";
+    } else {
+      alert("Geocode was not successful for the following reason:" + status);
     }
-    let yes = document.getElementById("yes");
-    let no = document.getElementById("no");
-    if(yes) yes.addEventListener("click", deleteItem(i));
-    if(no) no.addEventListener("click", pageRefresh);
-  }
+  })
+}
 
-  function deleteItem(i) {
-    arr1 = JSON.parse(localStorage.getItem("localData"));
-    arr1.splice(i, 1);
-    localStorage.setItem("localData", JSON.stringify(arr1));
-    displayResults();
-        }
 
-  function pageRefresh() {
-    window.location.reload();
+function deletePopUp(i) {
+  let modal = document.getElementById("modal" + i);
+  let closeBtn = document.getElementById("closeBtn" + i);
+  modal.style.display = "block";
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
   }
+}
 
-  function editItem(i) {
-    arr1 = JSON.parse(localStorage.getItem("localData"));
-    let itemToEdit = arr1[i];
-    arr1.splice(i, 1);
-    localStorage.setItem("localData", JSON.stringify(arr1));
-    let usernameToEdit = itemToEdit.username;
-    let cityToEdit = itemToEdit.city;
-    let interestsToEdit = itemToEdit.interests;
-    let aboutMeToEdit = itemToEdit.about_me;
-    let activityTypeToEdit = itemToEdit.activity_type;
-    let venueToEdit = itemToEdit.venue;
-    let activityDescriptionToEdit = itemToEdit.activity_description;
-    window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;   
-  }
+function deleteItem(i) {
+  arr1 = JSON.parse(localStorage.getItem("localData"));
+  arr1.splice(i, 1);
+  localStorage.setItem("localData", JSON.stringify(arr1));
+  displayResults();
+}
+
+function pageRefresh() {
+  window.location.reload();
+}
+
+function editItem(i) {
+  arr1 = JSON.parse(localStorage.getItem("localData"));
+  let itemToEdit = arr1[i];
+  arr1.splice(i, 1);
+  localStorage.setItem("localData", JSON.stringify(arr1));
+  let usernameToEdit = itemToEdit.username;
+  let cityToEdit = itemToEdit.city;
+  let interestsToEdit = itemToEdit.interests;
+  let aboutMeToEdit = itemToEdit.about_me;
+  let activityTypeToEdit = itemToEdit.activity_type;
+  let venueToEdit = itemToEdit.venue;
+  let activityDescriptionToEdit = itemToEdit.activity_description;
+  window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;
+}
