@@ -6,8 +6,8 @@ let oldArr = new Array();
 
 function addData(event) {
     event.preventDefault();
-    let oldArr = JSON.parse(localStorage.getItem("localData")) || []; 
-    arr.push( {
+    let oldArr = JSON.parse(localStorage.getItem("localData")) || [];
+    arr.push({
         username: document.getElementById("username").value,
         city: document.getElementById("city").value,
         interests: document.getElementById("interests").value,
@@ -20,31 +20,31 @@ function addData(event) {
         oldArr.push(arr[0]);
     };
     localStorage.setItem("localData", JSON.stringify(oldArr));
-    document.getElementById("form").reset();
     successPopUp();
-    setTimeout(function() { window.location.replace("./table.html");
+    setTimeout(function () {
+        window.location.replace("./table.html");
     }, 2000);
-    };
+};
 
 let input = document.getElementById('venue');
-if(input) input.addEventListener("click", initVenue);
+if (input) input.addEventListener("click", initVenue);
 
 function initVenue() {
     let autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.addListener('place_changed', function() {
+    autocomplete.addListener('place_changed', function () {
         let place = autocomplete.getPlace();
     });
-    };
-      
+};
+
 function successPopUp() {
     const popup = document.getElementById("myPopup");
     popup.classList.toggle("show");
 };
 
 
-function getData(){
+function getData() {
     let str = localStorage.getItem("localData");
-    if (str!= null) {
+    if (str != null) {
         arr = JSON.parse(str);
     }
 }
@@ -55,33 +55,33 @@ function deleteData() {
 
 window.addEventListener('DOMContentLoaded', (event) => {
     loadPreviousInput();
-        });
+});
 
 
 function getUrlParameter(sParam) {
-        let sPageURL = window.location.search.substring(1);
-        let sURLVariables = sPageURL.split('&');
-        for (let i = 0; i < sURLVariables.length; i++) {
-                let parameterName = sURLVariables[i].split('=');
-                if (parameterName[0] == sParam)  {
-                    return parameterName[1];
-                }
-            }
+    let sPageURL = window.location.search.substring(1);
+    let sURLVariables = sPageURL.split('&');
+    for (let i = 0; i < sURLVariables.length; i++) {
+        let parameterName = sURLVariables[i].split('=');
+        if (parameterName[0] == sParam) {
+            return parameterName[1];
         }
+    }
+}
 
 function loadPreviousInput() {
     let username = getUrlParameter("username");
-    if (username) {document.getElementById("username").value = username};
+    if (username) { document.getElementById("username").value = username };
     let city = getUrlParameter("city");
-    if (city) {document.getElementById("city").value = city};
+    if (city) { document.getElementById("city").value = city };
     let interests = getUrlParameter("interests");
-    if (interests) {document.getElementById("interests").value = interests};
+    if (interests) { document.getElementById("interests").value = interests };
     let aboutMe = getUrlParameter("about_me");
-    if (aboutMe) {document.getElementById("about_me").innerHTML = aboutMe};
+    if (aboutMe) { document.getElementById("about_me").innerHTML = aboutMe };
     let activityType = getUrlParameter("activity_type");
-    if (activityType) {document.getElementById("activities").value = activityType};
+    if (activityType) { document.getElementById("activities").value = activityType };
     let venue = getUrlParameter("venue");
-    if (venue) {document.getElementById("venue").value = venue};
+    if (venue) { document.getElementById("venue").value = venue };
     let activityDescription = getUrlParameter("activity_description");
-    if (activityDescription) {document.getElementById("activity_description").innerHTML = activityDescription};
+    if (activityDescription) { document.getElementById("activity_description").innerHTML = activityDescription };
 }

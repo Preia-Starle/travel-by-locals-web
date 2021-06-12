@@ -1,16 +1,16 @@
 let clear = document.getElementById("clear");
-if(clear) clear.addEventListener("click", clearData)
+if (clear) clear.addEventListener("click", clearData)
 
 function clearData() {
-    window.localStorage.clear();
-    window.location.replace("./index.html");
+  window.localStorage.clear();
+  window.location.replace("./index.html");
 };
 
 let addButton = document.getElementById("addPlace");
-if(addButton) addButton.addEventListener("click", formRedirect)
+if (addButton) addButton.addEventListener("click", formRedirect)
 
 function formRedirect() {
-window.location.replace("./form.html");
+  window.location.replace("./form.html");
 };
 
 let arr1 = new Array();
@@ -19,9 +19,9 @@ function displayResults() {
   arr1 = JSON.parse(localStorage.getItem("localData"));
   let results = document.getElementById("results");
   results.innerHTML = "";
-    for (let i = 0; i < arr1.length; i++) {
-        results.innerHTML += 
-          `<div class="result" id="result"> 
+  for (let i = 0; i < arr1.length; i++) {
+    results.innerHTML +=
+      `<div class="result" id="result"> 
             <table class="table" id="table"> 
             <tr id="data"> 
                     <td>Username:</td> 
@@ -59,22 +59,22 @@ function displayResults() {
                 </div>
             </div>
         </div>`;
-        let venue = document.getElementById("venueInput" + i).innerHTML;
-        if(venue) {
-          setTimeout(function() {
-            initMap(venue, i);
-          }, 1000 * i)
-            }; 
+    let venue = document.getElementById("venueInput" + i).innerHTML;
+    if (venue) {
+      setTimeout(function () {
+        initMap(venue, i);
+      }, 1000 * i)
+    };
   }
 }
         
-window.addEventListener('DOMContentLoaded', (event) => { 
+window.addEventListener('DOMContentLoaded', (event) => {
   displayResults();
-      }) 
+})
 
 
 let map;
- 
+
 function initMap(venue, i) {
   let mapId = "";
   let geocoder = new google.maps.Geocoder();
