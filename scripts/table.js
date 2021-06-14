@@ -119,16 +119,63 @@ function pageRefresh() {
 }
 
 function editItem(i) {
+  formModal.style.display = "block";
   arr1 = JSON.parse(localStorage.getItem("localData"));
   let itemToEdit = arr1[i];
-  arr1.splice(i, 1);
-  localStorage.setItem("localData", JSON.stringify(arr1));
   let usernameToEdit = itemToEdit.username;
+  if (usernameToEdit) { document.getElementById("usernameModal").value = usernameToEdit };
   let cityToEdit = itemToEdit.city;
+  if (cityToEdit) { document.getElementById("cityModal").value = cityToEdit };
   let interestsToEdit = itemToEdit.interests;
+  if (interestsToEdit) { document.getElementById("interestsModal").value = interestsToEdit };
   let aboutMeToEdit = itemToEdit.about_me;
+  if (aboutMeToEdit) { document.getElementById("about_meModal").innerHTML = aboutMeToEdit };
   let activityTypeToEdit = itemToEdit.activity_type;
+  if (activityTypeToEdit) { document.getElementById("activitiesModal").value = activityTypeToEdit };
   let venueToEdit = itemToEdit.venue;
+  if (venueToEdit) { document.getElementById("venueModal").value = venueToEdit };
   let activityDescriptionToEdit = itemToEdit.activity_description;
-  window.location.href = `./form.html?username=${usernameToEdit}&city=${cityToEdit}&interests=${interestsToEdit}&about_me=${aboutMeToEdit}&activity_type=${activityTypeToEdit}&venue=${venueToEdit}&activity_description=${activityDescriptionToEdit}`;
+  if (activityDescriptionToEdit) { document.getElementById("activity_descriptionModal").innerHTML = activityDescriptionToEdit };
+
+  let cancelEditBtn = document.getElementById("cancelModal");
+  cancelEditBtn.onclick = function () {
+    formModal.style.display = "none";
+  }
+
+  let submitModal = document.getElementById("submitModal");
+  submitModal.onclick = function () {
+    replaceData(i);
+    formModal.style.display = "none";
+    displayResults();
+  }
 }
+
+let inputModal = document.getElementById("venueModal");
+if (inputModal) inputModal.addEventListener("click", initVenueModal);
+
+function initVenueModal() {
+  let autocomplete = new google.maps.places.Autocomplete(inputModal);
+  autocomplete.addListener('place_changed', function () {
+    let place = autocomplete.getPlace();
+  });
+};
+
+function replaceData(i) {
+  deleteItem(i);
+  arr1.unshift({
+    username: document.getElementById("usernameModal").value,
+    city: document.getElementById("cityModal").value,
+    interests: document.getElementById("interestsModal").value,
+    about_me: document.getElementById("about_meModal").value,
+    activity_type: document.getElementById("activitiesModal").value,
+    venue: document.getElementById("venueModal").value,
+    activity_description: document.getElementById("activity_descriptionModal").value
+  });
+  if (arr1.length > 0) {
+    localStorage.setItem("localData", JSON.stringify(arr1));
+  };
+};
+
+
+ 
+

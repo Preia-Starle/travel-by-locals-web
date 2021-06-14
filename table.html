@@ -22,4 +22,106 @@
     <button id="addPlace" class="mdc-button mdc-button--raised">
         Add another place
     </button>
+    <form action="./table.html" method="GET" target="_blank" class="form" id="formModal">
+        <h2 id="your-placeModal">Edit Your Place</h2>
+        <label class="mdc-text-field mdc-text-field--filled" for="username">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="usernameModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" onfocus="this.value=''" value="Username" onblur="if(this.value =='') {this.value='Username'}">
+          <span class="mdc-line-ripple"></span>
+        </label>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled" for="city">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="cityModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" onfocus="this.value=''" value="My City" onblur="if(this.value =='') {this.value='My City'}"> 
+          <span class="mdc-line-ripple"></span>
+        </label>
+        <br>
+        <br>
+        <button class="mdc-button">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Change your profile picture</span>
+       </button>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled" for="interests">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="interestsModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choicesModal" onfocus="this.value=''" value="Interests" onblur="if(this.value =='') {this.value='Interests'}">
+          <span class="mdc-line-ripple"></span>
+        </label>
+          <datalist id="interest-choicesModal">
+            <option value="sport"></option>
+            <option value="arts & culture"></option>
+            <option value="traveling"></option>
+            <option value="hiking"></option>
+            <option value="food"></option>
+            <option value="cooking"></option>
+            <option value="books"></option>
+            <option value="shopping"></option>
+            <option value="nature"></option>
+            <option value="hiking"></option>
+            <option value="movies, series"></option>
+          </datalist>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-text-field__resizer">
+            <textarea id="about_meModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="this.value=''" value="About Me" onblur="if(this.value =='') {this.value='About Me'}">About Me</textarea>
+          </span>
+          <span class="mdc-line-ripple"></span>
+        </label>
+        <br>
+        <br>
+        <h2 id="recommendationsModal">Recommendations:</h2>
+        <label class="mdc-text-field mdc-text-field--filled" for="activity-choices">
+          <span class="mdc-text-field__ripple"></span>
+          <span class="mdc-floating-label" id="my-label-id"></span>
+          <input id="activitiesModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choicesModal" onfocus="this.value=''" value='Type of Activity' onblur="if(this.value =='') {this.value='Type of Activity'}">
+          <span class="mdc-line-ripple"></span>
+        </label>
+          <datalist id="activity-choicesModal">
+            <option value="sports"></option>
+            <option value="dining"></option>
+            <option value="sightseeing"></option>
+            <option value="arts"></option>
+            <option value="culture"></option>
+            <option value="nightlife"></option>
+            <option value="nature"></option>
+            <option value="shopping"></option>
+          </datalist>
+          <br>
+          <br>
+          <label class="mdc-text-field mdc-text-field--filled" for="venue">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-floating-label" id="my-label-id"></span>
+            <input id="venueModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="venue" onfocus="this.value=''" value="Venue" onblur="if(this.value =='') {this.value='Venue'}">
+            <span class="mdc-line-ripple"></span>
+          </label>
+          <br>
+          <br>
+          <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
+            <span class="mdc-text-field__ripple"></span>
+            <span class="mdc-text-field__resizer">
+              <textarea id="activity_descriptionModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="this.value=''" value='Activity Description' onblur="if(this.value =='') {this.value='Activity Description'}">Activity Description</textarea>
+            </span>
+            <span class="mdc-line-ripple"></span>
+          </label>
+        <br>
+        <br>
+        <button class="mdc-button">
+          <div class="mdc-button__ripple"></div>
+          <span class="mdc-button__label">Upload more pictures</span>
+       </button>
+       <br>
+       <button id="submitModal" class="mdc-button mdc-button--raised">
+        Save Changes
+      </button>
+      <button id="cancelModal" class="mdc-button mdc-button--raised">
+        Cancel
+      </button>
+      </form>
 </body>
