@@ -27,7 +27,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="username">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="usernameModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" onfocus="this.value=''" value="Username" onblur="if(this.value =='') {this.value='Username'}">
+          <input id="usernameModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" value="Username" onfocus="if(this.value=='') {this.value='Username'} else if(this.value == 'Username') {this.value=''}" onblur="if(this.value =='') {this.value='Username'}">
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -35,7 +35,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="city">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="cityModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" onfocus="this.value=''" value="My City" onblur="if(this.value =='') {this.value='My City'}"> 
+          <input id="cityModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" value="My City" onfocus="if(this.value=='') {value='My City'} else if(this.value== 'My City') {this.value = ''}" onblur="if(this.value =='') {this.value='My City'}"> 
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -49,7 +49,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="interests">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="interestsModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choicesModal" onfocus="this.value=''" value="Interests" onblur="if(this.value =='') {this.value='Interests'}">
+          <input id="interestsModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choicesModal" value="Interests" onfocus="if(this.value=='') {this.value='Interests'} else if(this.value == 'Interests'){this.value = ''}" onblur="if(this.value =='') {this.value='Interests'}">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="interest-choicesModal">
@@ -70,7 +70,7 @@
         <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-text-field__resizer">
-            <textarea id="about_meModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="this.value=''" value="About Me" onblur="if(this.value =='') {this.value='About Me'}">About Me</textarea>
+            <textarea id="about_meModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="if(this.value==''){this.value='About Me'} else if (this.value == 'About Me'){this.value = ''}" onblur="if(this.value =='') {this.value='About Me'}">About Me</textarea>
           </span>
           <span class="mdc-line-ripple"></span>
         </label>
@@ -80,7 +80,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="activity-choices">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="activitiesModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choicesModal" onfocus="this.value=''" value='Type of Activity' onblur="if(this.value =='') {this.value='Type of Activity'}">
+          <input id="activitiesModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choicesModal" value="Type of Activity" onfocus="if(this.value=='') {this.value='Type of Activity'} else if (this.value == 'Type of Activity'){this.value = ''}" onblur="if(this.value =='') {this.value='Type of Activity'}">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="activity-choicesModal">
@@ -98,7 +98,7 @@
           <label class="mdc-text-field mdc-text-field--filled" for="venue">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="my-label-id"></span>
-            <input id="venueModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="venue" onfocus="this.value=''" value="Venue" onblur="if(this.value =='') {this.value='Venue'}">
+            <input id="venueModal" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="venue" value="Venue" onfocus="if(this.value=='') {this.value='Venue'} else if(this.venue == 'Venue') {this.value = ''}" onblur="if(this.value =='') {this.value='Venue'}">
             <span class="mdc-line-ripple"></span>
           </label>
           <br>
@@ -106,7 +106,7 @@
           <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-text-field__resizer">
-              <textarea id="activity_descriptionModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="this.value=''" value='Activity Description' onblur="if(this.value =='') {this.value='Activity Description'}">Activity Description</textarea>
+              <textarea id="activity_descriptionModal" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="if(this.value=='') {this.value='Activity Description'} else if(this.value == 'Activity Description'){this.value = ''}" onblur="if(this.value =='') {this.value='Activity Description'}">Activity Description</textarea>
             </span>
             <span class="mdc-line-ripple"></span>
           </label>
