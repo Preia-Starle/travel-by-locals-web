@@ -17,7 +17,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="username">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" value="Username" onfocus="if(this.value=='') {this.value='Username'} else if(this.value == 'Username') {this.value=''}" onblur="if(this.value =='') {this.value='Username'}">
+          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" value="Username" onfocus="if(this.value==''){this.value='Username'} else if(this.value == 'Username'){this.value=''}"onblur="if(this.value ==''){this.value='Username'}">
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -29,12 +29,10 @@
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
-        <br>
-        <button class="mdc-button">
-          <div class="mdc-button__ripple"></div>
-          <span class="mdc-button__label">Upload your profile picture</span>
-       </button>
-        <br>
+        <!--<button class="mdc-button">
+          <div class="mdc-button__ripple">Upload you Profile Picture</div>
+          <input type="image" class="material-icons" value="Upload your profile picture">/
+       </button>-->
         <br>
         <label class="mdc-text-field mdc-text-field--filled" for="interests">
           <span class="mdc-text-field__ripple"></span>
@@ -102,10 +100,12 @@
           </label>
         <br>
         <br>
-        <button class="mdc-button">
+        <!--<button class="mdc-button">
           <div class="mdc-button__ripple"></div>
           <span class="mdc-button__label">Upload pictures</span>
-       </button>
+          <br>
+          <input type="image">
+       </button>-->
         <br>
         <br>
         <div class="popup">
@@ -116,6 +116,9 @@
           Your contribution has been a success!
           You will be automatically redirected to review it.
           You can confirm your submission if you are happy with what you see
+        </span>
+        <span class="popuptext" id="emptyFormPop">
+          You need to enter values to submit the form. All fields except images are required!
         </span>
         </div>
         </form>

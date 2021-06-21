@@ -22,29 +22,16 @@ function displayResults() {
   for (let i = 0; i < arr1.length; i++) {
     results.innerHTML +=
       `<div class="result" id="result"> 
-            <table class="table" id="table"> 
-            <tr id="data"> 
-                    <td>Username:</td> 
-                    <td>My City:</td> 
-                    <td>Profile Picture:</td> 
-                    <td>Interests:</td> 
-                    <td>About Me:</td> 
-                    <td>Type Of Activity:</td> 
-                    <td>Venue Name:</td> 
-                    <td>Activity Description:</td>
-                    <td>Pictures:</td> 
-                </tr> 
-                <tr>
-                    <td> ${arr1[i].username} </td> 
-                    <td> ${arr1[i].city} </td> 
-                    <td> ${arr1[i].profile_picture} </td> 
-                    <td> ${arr1[i].interests} </td> 
-                    <td> ${arr1[i].about_me} </td> 
-                    <td> ${arr1[i].activity_type} </td> 
-                    <td id="venueInput${[i]}"> ${arr1[i].venue} </td> 
-                    <td> ${arr1[i].activity_description} </td> 
-                    <td> ${arr1[i].pictures} </td>
-                </tr> 
+            <table style="width: 100%; table-layout: auto;" class="table" id="table"> 
+            <tr><td class="leftCell">Username:</td><td class="rightCell"> ${arr1[i].username} </td></tr> 
+            <tr><td class="leftCell">My City:</td><td class="rightCell"> ${arr1[i].city} </td></tr>
+            <!--<tr><td class="leftCell">Profile Picture:</td><td class="rightCell"> ${arr1[i].profile_picture} </td></tr>--> 
+            <tr><td class="leftCell">Interests:</td><td class="rightCell"> ${arr1[i].interests} </td></tr> 
+            <tr><td class="leftCell">About Me:</td><td  class="rightCell"style="text-overflow: ellipsis; white-space: normal; word-break: break-all"> ${arr1[i].about_me} </td></tr> 
+            <tr><td class="leftCell">Type Of Activity:</td><td class="rightCell"> ${arr1[i].activity_type} </td></tr> 
+            <tr><td class="leftCell">Venue Name:</td><td class="rightCell" id="venueInput${[i]}"> ${arr1[i].venue} </td></tr> 
+            <tr><td class="leftCell">Activity Description:</td><td class="rightCell" style="text-overflow: ellipsis; white-space: normal; word-break: break-all"> ${arr1[i].activity_description} </td></tr> 
+            <!--<tr><td>Pictures:</td><td class="rightCell"> ${arr1[i].pictures} </td></tr>--> 
             </table> 
             <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
             </div> 

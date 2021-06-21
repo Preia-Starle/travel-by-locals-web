@@ -41,6 +41,11 @@ function successPopUp() {
     popup.classList.toggle("show");
 };
 
+function emptyFormPopUp() {
+    const popup = document.getElementById("emptyFormPop");
+    popup.classList.toggle("show");
+};
+
 
 function getData() {
     let str = localStorage.getItem("localData");

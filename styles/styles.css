@@ -207,16 +207,19 @@ body {
 
   .result tr {
       display: block;
-      float: left;
-  }
-
-  .result td {
-      display: block;
   }
 
   #delete {
       float: right;
   }
+
+  .leftCell {
+      min-width: 200px;
+  }
+
+  .rightCell {
+    min-width: 700px;
+}
 
 
   /* medium.com/@nerdplusdog... */
