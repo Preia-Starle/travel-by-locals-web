@@ -33,7 +33,7 @@ function displayResults() {
             <tr><td class="leftCell">Activity Description:</td><td class="rightCell" style="text-overflow: ellipsis; white-space: normal; word-break: break-all"> ${arr1[i].activity_description} </td></tr> 
             <!--<tr><td>Pictures:</td><td class="rightCell"> ${arr1[i].pictures} </td></tr>--> 
             </table> 
-            <div class="maps" style="overflow:hidden; position: relative; height: 500px;width: 500px;" id="map${[i]}">
+            <div class="maps" style="overflow:hidden; position: relative; width: 500px; height: 500px" id="map${[i]}">
             </div> 
                 <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
                 <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span>

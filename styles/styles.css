@@ -4,17 +4,17 @@
 
 #contact {
     width: 100%;
-    padding: 13px;
+    padding: 1rem;
     background-color: darkgray;
     position: fixed;
     bottom: 0;
     font-weight: bold;
-    margin-top: 63px;
+    margin-top: 5.25rem;
 }
 
 #contact li {
     display: inline-block;
-    padding: 0 10px;
+    padding: 0 0.83rem;
     color: white;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .form {
-    margin-left: 25px;
+    margin-left: 2.08rem;
     text-align: center;
 }
 
@@ -53,9 +53,9 @@
 .intro-text {
     margin: 0 auto;
     padding: 1%;
-    width: 800px;
-    height: 350px;
-    border: 3px solid white;
+    width: 66.67rem;
+    height: 23rem;
+    border: 0.25rem solid white;
     color: white;
     background-color: darkgray;
     font-weight: bold;
@@ -86,7 +86,7 @@ body {
     display: block;
     text-align: center;
     width: 100%;
-    padding: 35px;
+    padding: 2.92rem;
     margin-bottom: 10%;
  
 }
@@ -96,8 +96,8 @@ body {
 }
 
 .instructions {
-    width: 800px;
-    height: 400px;
+    width: 66.67rem;
+    height: 33.33rem;
     color: white;
     font-size: large;
     margin: 0 auto;
@@ -109,12 +109,12 @@ body {
     color: white;
     font-weight: bold;
     background-color: darkgray;
-    border: 3px solid white;
+    border: 1rem solid white;
     text-align: left;
 }
 
 .instructions ol li {
-    padding: 15px;
+    padding: 1.25rem;
     margin-left: 5%;
 }
 
@@ -153,17 +153,17 @@ body {
   /* The actual popup (appears on top) */
   .popup .popuptext {
     visibility: hidden;
-    width: 160px;
+    width: 13.33rem;
     background-color: #555;
     color: #fff;
     text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
+    border-radius: 0.5rem;
+    padding: 0.6rem 0;
     position: absolute;
     z-index: 1;
     bottom: 125%;
     left: 50%;
-    margin-left: -80px;
+    margin-left: -6.67rem;
   }
   
   /* Popup arrow */
@@ -172,8 +172,8 @@ body {
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
+    margin-left: -0.42rem;
+    border-width: 0.42rem;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
   }
@@ -188,7 +188,7 @@ body {
 
   .result {
       box-sizing: border-box;
-      border: 3px solid black;
+      border: 0.25rem solid black;
       width: 50%;
   }
 
@@ -214,11 +214,11 @@ body {
   }
 
   .leftCell {
-      min-width: 200px;
+      min-width: 16.67rem;
   }
 
   .rightCell {
-    min-width: 700px;
+    min-width: 58.3rem;
 }
 
 
@@ -227,7 +227,7 @@ body {
   .modal {
     display: none;
     position: fixed; 
-    padding-top: 50px;
+    padding-top: 4.17rem;
     left: 0; 
     top: 0;
     width: 100%;
@@ -239,7 +239,7 @@ body {
   .modalContent {
     position: relative; 
     background-color: white;
-    padding: 20px; 
+    padding: 1.67rem; 
     margin: auto; 
     width: 75%;  
     -webkit-animation-name: animatetop;
@@ -251,7 +251,7 @@ body {
   #closeBtn {
     float: right; 
     color: lightgray; 
-    font-size: 24px;  
+    font-size: 2rem;  
     font-weight: bold;
   }
   #closeBtn:hover {
@@ -259,11 +259,11 @@ body {
   }
 
   @-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
+    from {top:-25rem; opacity:0} 
     to {top:0; opacity:1}
   }
   @keyframes animatetop {
-    from {top:-300px; opacity:0}
+    from {top:-25rem; opacity:0}
     to {top:0; opacity:1}
   }
 
@@ -282,7 +282,7 @@ body {
   #formModal {
     display: none;
     position: fixed; 
-    padding-top: 50px;
+    padding-top: 4.17em;
     left: 0; 
     top: 0;
     width: 100%;
