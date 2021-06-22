@@ -22,8 +22,8 @@ function displayResults() {
   for (let i = 0; i < arr1.length; i++) {
     results.innerHTML +=
       `<div class="result" id="result"> 
-            <table style="width: 100%; table-layout: auto;" class="table" id="table"> 
-            <tr><td class="leftCell">Username:</td><td class="rightCell"> ${arr1[i].username} </td></tr> 
+            <table class="table" id="table"> 
+            <tr><td class="leftCell">Username:</td><td class="rightCell"> ${arr1[i].username} </td><td id="edit_delete"><span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span><span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span></td></tr> 
             <tr><td class="leftCell">My City:</td><td class="rightCell"> ${arr1[i].city} </td></tr>
             <!--<tr><td class="leftCell">Profile Picture:</td><td class="rightCell"> ${arr1[i].profile_picture} </td></tr>--> 
             <tr><td class="leftCell">Interests:</td><td class="rightCell"> ${arr1[i].interests} </td></tr> 
@@ -32,11 +32,9 @@ function displayResults() {
             <tr><td class="leftCell">Venue Name:</td><td class="rightCell" id="venueInput${[i]}"> ${arr1[i].venue} </td></tr> 
             <tr><td class="leftCell">Activity Description:</td><td class="rightCell" style="text-overflow: ellipsis; white-space: normal; word-break: break-all"> ${arr1[i].activity_description} </td></tr> 
             <!--<tr><td>Pictures:</td><td class="rightCell"> ${arr1[i].pictures} </td></tr>--> 
-            </table> 
-            <div class="maps" style="overflow:hidden; position: relative; width: 500px; height: 500px" id="map${[i]}">
+            </table>
+            <div class="maps" style="overflow:hidden; position: relative; width: 100%; height: 37rem" id="map${[i]}">
             </div> 
-                <span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span>
-                <span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span>
                 <div class="modal" id="modal${[i]}">
                 <div class="modalContent">
                 <span class="material-icons" id="closeBtn${[i]}">clear</span>

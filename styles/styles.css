@@ -205,20 +205,39 @@ body {
   }
   
 
-  .result tr {
-      display: block;
+  #results {
+    display: flex;
+    flex-direction: row; 
+    max-width: 100%;
+    flex-wrap: wrap;
+    height: auto;
   }
 
-  #delete {
-      float: right;
+  .result {
+      flex: 1 1 45rem;
+      margin: 3rem auto;
+      max-width: 45rem;
+  }
+
+  .maps {
+      flex: 1 1 45rem;
+      bottom: 0; 
   }
 
   .leftCell {
-      min-width: 16.67rem;
+      min-width: 20%;
+  }
+
+  #delete{
+      float: right;
   }
 
   .rightCell {
-    min-width: 58.3rem;
+    min-width: 60%;
+}
+
+#edit_delete {
+    min-width: 20%;
 }
 
 
