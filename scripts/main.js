@@ -23,3 +23,13 @@ window.onload = function () {
 
 
 
+function showMenu() {
+let dropdownContent = document.getElementById("dropdown_content");
+dropdownContent.style.display = "block";
+};
+
+
+
+
+
+

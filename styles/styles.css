@@ -68,6 +68,33 @@
     position: fixed;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown_content {
+    display: none;
+    position: absolute;
+    background-color: darkgray;
+    min-width: 13.3rem;
+    box-shadow: 0rem 0.6rem 1.3rem 0rem rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown_content a {
+    color: white;
+    padding: 1rem 1.3rem;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+.dropdown_content a:hover {
+    background-color: rgb(117, 99, 99);
+}
+
+
 body {
     background-image: url("../images/city_outline.jpg");
     background-repeat: no-repeat;
@@ -318,4 +345,7 @@ body {
   #recommendationsModal {
       color: ivory;
   }
+
+
+
 
