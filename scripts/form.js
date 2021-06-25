@@ -59,5 +59,12 @@ function deleteData() {
 }
 
 
+function maxLength() {
+    if(this.value.length > max.length) {
+        this.value.slice(0, this.maxLength); 
+}
+}
+
+
 
 

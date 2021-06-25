@@ -17,15 +17,16 @@
         <label class="mdc-text-field mdc-text-field--filled" for="username">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" value="Username" onfocus="if(this.value==''){this.value='Username'} else if(this.value == 'Username'){this.value=''}"onblur="if(this.value ==''){this.value='Username'}">
+          <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username" value="Username" onfocus="if(this.value==''){this.value='Username'} else if(this.value == 'Username'){this.value=''}"onblur="if(this.value ==''){this.value='Username'}"; type="number"; maxLength="15"; oninput="maxLength()">
           <span class="mdc-line-ripple"></span>
+          <br>
         </label>
         <br>
         <br>
         <label class="mdc-text-field mdc-text-field--filled" for="city">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="city" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" value="My City" onfocus="if(this.value=='') {value='My City'} else if(this.value== 'My City') {this.value = ''}" onblur="if(this.value =='') {this.value='My City'}"> 
+          <input id="city" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" value="My City" onfocus="if(this.value=='') {value='My City'} else if(this.value== 'My City') {this.value = ''}" onblur="if(this.value =='') {this.value='My City'}" type="number"; maxLength="33"; oninput="maxLength()"> 
           <span class="mdc-line-ripple"></span>
         </label>
         <br>
@@ -37,7 +38,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="interests">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="interests" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choices" value="Interests" onfocus="if(this.value=='') {this.value='Interests'} else if(this.value == 'Interests'){this.value = ''}" onblur="if(this.value =='') {this.value='Interests'}">
+          <input id="interests" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="interests" list="interest-choices" value="Interests" onfocus="if(this.value=='') {this.value='Interests'} else if(this.value == 'Interests'){this.value = ''}" onblur="if(this.value =='') {this.value='Interests'}" type="number"; maxLength="33"; oninput="maxLength()">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="interest-choices">
@@ -58,7 +59,7 @@
         <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-text-field__resizer">
-            <textarea id="about_me" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="if(this.value==''){this.value='About Me'} else if (this.value == 'About Me'){this.value = ''}" onblur="if(this.value =='') {this.value='About Me'}">About Me</textarea>
+            <textarea id="about_me" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="about-me" onfocus="if(this.value==''){this.value='About Me'} else if (this.value == 'About Me'){this.value = ''}" onblur="if(this.value =='') {this.value='About Me'}" type="number"; maxLength="350"; oninput="maxLength()">About Me</textarea>
           </span>
           <span class="mdc-line-ripple"></span>
         </label>
@@ -68,7 +69,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="activity-choices">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choices" value="Type of Activity" onfocus="if(this.value=='') {this.value='Type of Activity'} else if (this.value == 'Type of Activity'){this.value = ''}" onblur="if(this.value =='') {this.value='Type of Activity'}">
+          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choices" value="Type of Activity" onfocus="if(this.value=='') {this.value='Type of Activity'} else if (this.value == 'Type of Activity'){this.value = ''}" onblur="if(this.value =='') {this.value='Type of Activity'}"; type="number"; maxLength="15"; oninput="maxLength()">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="activity-choices">
@@ -86,7 +87,7 @@
           <label class="mdc-text-field mdc-text-field--filled" for="venue">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-floating-label" id="my-label-id"></span>
-            <input id="venue" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="venue" value="Venue" onfocus="if(this.value=='') {this.value='Venue'} else if(this.venue == 'Venue') {this.value = ''}" onblur="if(this.value =='') {this.value='Venue'}">
+            <input id="venue" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="venue" value="Venue" onfocus="if(this.value=='') {this.value='Venue'} else if(this.venue == 'Venue') {this.value = ''}" onblur="if(this.value =='') {this.value='Venue'}"; type="number"; maxLength="50"; oninput="maxLength()">
             <span class="mdc-line-ripple"></span>
           </label>
           <br>
@@ -94,7 +95,7 @@
           <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
             <span class="mdc-text-field__ripple"></span>
             <span class="mdc-text-field__resizer">
-              <textarea id="activity_description" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="if(this.value=='') {this.value='Activity Description'} else if(this.value == 'Activity Description'){this.value = ''}" onblur="if(this.value =='') {this.value='Activity Description'}">Activity Description</textarea>
+              <textarea id="activity_description" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label" name="activity-description" onfocus="if(this.value=='') {this.value='Activity Description'} else if(this.value == 'Activity Description'){this.value = ''}" onblur="if(this.value =='') {this.value='Activity Description'}"; type="number"; maxLength="500"; oninput="maxLength()">Activity Description</textarea>
             </span>
             <span class="mdc-line-ripple"></span>
           </label>
