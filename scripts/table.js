@@ -123,12 +123,14 @@ function editItem(i) {
   if (activityDescriptionToEdit) { document.getElementById("activity_descriptionModal").innerHTML = activityDescriptionToEdit };
 
   let cancelEditBtn = document.getElementById("cancelModal");
-  cancelEditBtn.onclick = function () {
+  cancelEditBtn.onclick = function (e) {
+    e.preventDefault();
     formModal.style.display = "none";
   }
 
   let submitModal = document.getElementById("submitModal");
-  submitModal.onclick = function () {
+  submitModal.onclick = function (e) {
+    e.preventDefault();
     replaceData(i);
     formModal.style.display = "none";
     displayResults();
