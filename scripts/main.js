@@ -22,11 +22,17 @@ window.onload = function () {
 };
 
 
-
 function showMenu() {
 let dropdownContent = document.getElementById("dropdown_content");
 dropdownContent.style.display = "block";
 };
+
+window.addEventListener("mouseup", function(event) {
+  let dropdownContent = document.getElementById("dropdown_content");
+  if(event.target != dropdownContent) {
+    dropdownContent.style.display = "none";
+  }
+});
 
 
 

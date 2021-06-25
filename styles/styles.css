@@ -94,6 +94,10 @@
     background-color: rgb(117, 99, 99);
 }
 
+.dropdown_content a:hover {
+    display: block;
+}
+
 
 body {
     background-image: url("../images/city_outline.jpg");
