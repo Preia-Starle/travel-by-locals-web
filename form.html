@@ -69,7 +69,7 @@
         <label class="mdc-text-field mdc-text-field--filled" for="activity-choices">
           <span class="mdc-text-field__ripple"></span>
           <span class="mdc-floating-label" id="my-label-id"></span>
-          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choices" value="Type of Activity" onfocus="if(this.value=='') {this.value='Type of Activity'} else if (this.value == 'Type of Activity'){this.value = ''}" onblur="if(this.value =='') {this.value='Type of Activity'}"; type="number"; maxLength="15"; oninput="maxLength()">
+          <input id="activities" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="activities" list="activity-choices" value="Type of Activity" onfocus="if(this.value=='') {this.value='Type of Activity'} else if (this.value == 'Type of Activity'){this.value = ''}" onblur="if(this.value =='') {this.value='Type of Activity'}"; type="number"; maxLength="33"; oninput="maxLength()">
           <span class="mdc-line-ripple"></span>
         </label>
           <datalist id="activity-choices">
@@ -118,6 +118,7 @@
           You will be automatically redirected to review it.
           You can confirm your submission if you are happy with what you see
         </span>
+        <span class="popuptext" id="tooManyWords">This a little too much!</span>
         <span class="popuptext" id="emptyFormPop">
           You need to enter values to submit the form. All fields except images are required!
         </span>

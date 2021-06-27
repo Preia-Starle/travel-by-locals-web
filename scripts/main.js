@@ -34,6 +34,28 @@ window.addEventListener("mouseup", function(event) {
   }
 });
 
+function showLeftMenu() {
+  let dropdownContent = document.getElementById("right_dropdown");
+  dropdownContent.style.display = "block";
+  };
+
+  window.addEventListener("mouseup", function(event) {
+    let dropdownContent = document.getElementById("right_dropdown");
+    if(event.target != dropdownContent) {
+      dropdownContent.style.display = "none";
+    }
+  });
+
+
+function loginPopUp() {
+  let modal = document.getElementById("loginModal");
+  let closeBtn = document.getElementById("close_btn");
+  modal.style.display = "block";
+  closeBtn.onclick = function () {
+    modal.style.display = "none";
+  }
+}
+
 
 
 

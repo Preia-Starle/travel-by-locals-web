@@ -98,6 +98,34 @@
     display: block;
 }
 
+#right_dropdown {
+    display: none;
+    position: absolute;
+    background-color: darkgray;
+    min-width: 13.3rem;
+    box-shadow: 0rem 0.6rem 1.3rem 0rem rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+#right_dropdown a {
+    color: white;
+    padding: 1rem 4rem;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    left: auto;
+    right: 0;
+    margin-left: -4rem;
+}
+
+#right_dropdown a:hover {
+    background-color: rgb(117, 99, 99);
+}
+
+#right_dropdown a:hover {
+    display: block;
+}
+
 
 body {
     background-image: url("../images/city_outline.jpg");
@@ -321,6 +349,17 @@ body {
       float: right;
   }
 
+  #close_btn {
+    float: right; 
+    color: lightgray; 
+    font-size: 2rem;  
+    font-weight: bold;
+  }
+
+  #close_btn:hover {
+    color: darkgray;
+  }
+
   #delete:hover {
       cursor: pointer;
   }
@@ -336,7 +375,8 @@ body {
     left: 0; 
     top: 0;
     width: 100%;
-    height: 100%; 
+    height: 100%;
+    max-width: 100%; 
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.5);
     overflow-y: auto;

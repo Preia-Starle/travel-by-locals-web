@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,14 @@
   <script type="text/javascript" src="./scripts/main.js" defer></script>
   <title>Travels By Locals</title>
 </head>
+
 <body>
   <header class="mdc-top-app-bar">
     <div class="mdc-top-app-bar__row">
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
         <div class="dropdown">
-        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="dropdown_btn"
-          aria-label="Open navigation menu" onclick="showMenu()">menu</button>
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button" id="dropdown_btn"
+            aria-label="Open navigation menu" onclick="showMenu()">menu</button>
           <div class="dropdown_content" id="dropdown_content">
             <a href="table.html">My Recommendations</a>
             <a href="form.html">Add Recommendation</a>
@@ -27,8 +29,59 @@
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
           aria-label="Favorite">favorite</button>
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
-        <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
-          aria-label="Options">more_vert</button>
+        <div class="dropdown">
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options"
+            onclick="showLeftMenu()">more_vert</button>
+          <div class="right_dropdown" id="right_dropdown">
+            <a id="login" onclick="loginPopUp()">Login</a>
+          </div>
+        </div>
+        <div class="modal" id="loginModal">
+          <div class="modalContent">
+            <span class="material-icons" id="close_btn">clear</span>
+            <form>
+              <label class="mdc-text-field mdc-text-field--filled" for="username" style="color: darkgray" ;>Username:
+                <span class="mdc-text-field__ripple"></span>
+                <span class="mdc-floating-label" id="my-label-id"></span>
+                <input id="use" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="use"
+                  required>
+                <span class="mdc-line-ripple"></span>
+              </label>
+              <br>
+              <br>
+              <label class="mdc-text-field mdc-text-field--filled" for="username" style="color: darkgray" ;>Password:
+                <span class="mdc-text-field__ripple"></span>
+                <span class="mdc-floating-label" id="my-label-id"></span>
+                <input id="psw" class="mdc-text-field__input" type="password" aria-labelledby="my-label-id" name="psw"
+                  placeholder="EnterPassword" required>
+                <span class="mdc-line-ripple"></span>
+              </label>
+            </form>
+            <br>
+            <button class="mdc-button mdc-button--raised">
+              <span class="mdc-button__label"><a href="" target="_blank" class="button-label">Submit</a></span>
+            </button>
+            <br>
+            <br>
+            <label style="color: darkgray">Remember me
+              <input type="checkbox" checked="checked" name="remember" style="color: darkgray">
+            </label>
+            <br>
+            <br>
+            <label>
+              <div class="container" style="background-color:#f1f1f1">
+                <span class="psw" style="color:darkgray">Forgot <a href="#">password?</a></span>
+              </div>
+            </label>
+            <br>
+            <br>
+            <label>
+              <div class="container" style="background-color:#f1f1f1">
+                <span class="signup" style="color:darkgray">Don't have an account? <a href="#">Sign Up</a></span>
+              </div>
+            </label>
+          </div>
+        </div>
       </section>
     </div>
   </header>
@@ -80,4 +133,5 @@
     <li>About Me</li>
   </ul>
 </footer>
+
 </html>
