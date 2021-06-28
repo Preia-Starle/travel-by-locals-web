@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./styles/styles.css" rel="stylesheet">
+    <script type="text/javascript" src="" defer></script>
+</head>
+
+<body>
+    <form action="./form.html" method="GET" target="_blank" class="form" id="signupForm">
+        <h2>Create a Profile</h2>
+        <label class="mdc-text-field mdc-text-field--filled" for="username">
+            <span class="mdc-text-field__ripple">Username:</span>
+            <span class="mdc-floating-label" id="my-label-id"></span>
+            <input id="username" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="username"
+                placeholder="Username" type="number" ; maxLength="15" ; oninput="maxLength()" required>
+            <span class="mdc-line-ripple"></span>
+            <br>
+            <br>
+        </label>
+        <br>
+        <br>
+        <button class="mdc-button">
+            <div class="mdc-button__ripple"></div>
+            <span class="mdc-button__label">Upload profile picture</span>
+            <br>
+            <input type="file">
+        </button>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled" for="interests">
+            <span class="mdc-text-field__ripple">Interests</span>
+            <span class="mdc-floating-label" id="my-label-id"></span>
+            <input id="interests" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id"
+                name="interests" list="interest-choices" type="number" ; maxLength="33" ; oninput="maxLength()"
+                required>
+            <span class="mdc-line-ripple"></span>
+        </label>
+        <datalist id="interest-choices">
+            <option value="sport"></option>
+            <option value="arts & culture"></option>
+            <option value="traveling"></option>
+            <option value="hiking"></option>
+            <option value="food"></option>
+            <option value="cooking"></option>
+            <option value="books"></option>
+            <option value="shopping"></option>
+            <option value="nature"></option>
+            <option value="hiking"></option>
+            <option value="movies, series"></option>
+        </datalist>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled mdc-text-field--textarea mdc-text-field--no-label">
+            <span class="mdc-text-field__ripple">About Me:</span>
+            <span class="mdc-text-field__resizer">
+                <textarea id="about_me" class="mdc-text-field__input" rows="8" cols="40" aria-label="Label"
+                    name="about-me" ; type="number" ; maxLength="350" ; oninput="maxLength()" required></textarea>
+            </span>
+            <span class="mdc-line-ripple"></span>
+        </label>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled" for="password" style="color: black;">
+            <span class="mdc-text-field__ripple">Create Password:</span>
+            <span class="mdc-floating-label" id="my-label-id"></span>
+            <input id="psw" class="mdc-text-field__input" type="password" aria-labelledby="my-label-id" name="psw"
+                placeholder="CreatePassword" required>
+            <span class="mdc-line-ripple"></span>
+        </label>
+        <br>
+        <br>
+        <button id="submitReg" class="mdc-button mdc-button--raised">
+            Submit
+        </button>
+    </form>
+</body>
