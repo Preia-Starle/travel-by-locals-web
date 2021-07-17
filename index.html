@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="./styles/styles.css" rel="stylesheet">
   <script type="text/javascript" src="./scripts/main.js" defer></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <script type="text/javascript" src="./public/app.js" defer></script>
   <title>Travels By Locals</title>
 </head>
 
@@ -33,7 +35,9 @@
           <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options"
             onclick="showLeftMenu()">more_vert</button>
           <div class="right_dropdown" id="right_dropdown">
-            <a id="login" onclick="loginPopUp()">Login</a>
+            <a id="btn-login" disabled="true" onclick="login()">Log In</a>
+            <a id="btn-logout" disabled="true" onclick="logout()">Log Out</a>
+            <a id="profile" disabled="true">My Profile</a>
           </div>
         </div>
         <div class="modal" id="loginModal">
@@ -59,7 +63,7 @@
             </form>
             <br>
             <button class="mdc-button mdc-button--raised">
-              <span class="mdc-button__label"><a href="" target="_blank" class="button-label">Submit</a></span>
+              <span class="mdc-button__label"><a class="button-label" onclick="login()">Submit</a></span>
             </button>
             <br>
             <br>
@@ -77,7 +81,7 @@
             <br>
             <label>
               <div class="container" style="background-color:#f1f1f1">
-                <span class="signup" style="color:darkgray">Don't have an account? <a href="#">Sign Up</a></span>
+                <span class="signup" style="color:darkgray">Don't have an account? <a href="./signup.html">Sign Up</a></span>
               </div>
             </label>
           </div>
@@ -123,6 +127,20 @@
       <span class="mdc-button__label"><a href="./form.html" target="_blank" class="button-label">Contribute with your
           place</a></span>
     </button>
+  </div>
+  <div class="hidden" id="gated-content">
+    <p>
+      You're seeing this content because you're currently
+      <strong>logged in</strong>.
+    </p>
+    <label>
+      Access token:
+      <pre id="ipt-access-token"></pre>
+    </label>
+    <label>
+      User profile:
+      <pre id="ipt-user-profile"></pre>
+    </label>
   </div>
 </body>
 <br>

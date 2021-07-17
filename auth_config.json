@@ -1,0 +1,8 @@
+{
+    "domain": "travels-by-locals.eu.auth0.com",
+    "clientId": "GpUl0yvzdSzIxHfi613LFqY6rI37Js22",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+      } 
+}

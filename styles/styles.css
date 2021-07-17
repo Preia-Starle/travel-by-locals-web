@@ -101,7 +101,6 @@
 #right_dropdown {
     display: none;
     position: absolute;
-    background-color: darkgray;
     min-width: 13.3rem;
     box-shadow: 0rem 0.6rem 1.3rem 0rem rgba(0,0,0,0.2);
     z-index: 1;
@@ -109,13 +108,13 @@
 
 #right_dropdown a {
     color: white;
-    padding: 1rem 4rem;
+    padding: 1rem 1.3rem;
     text-decoration: none;
-    text-align: left;
     display: block;
     left: auto;
     right: 0;
     margin-left: -4rem;
+    background-color: darkgray;
 }
 
 #right_dropdown a:hover {
@@ -394,6 +393,15 @@ body {
       margin: 0 auto;
   }
 
+  #create-profile {
+    background-color: darkgrey;
+    color: white;
+}
+
+.form-title a {
+    background-color: darkgrey;
+    color: white;
+}
 
 
 
