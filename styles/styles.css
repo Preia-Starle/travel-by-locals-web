@@ -403,5 +403,24 @@ body {
     color: white;
 }
 
+#about-me {
+    margin: 0 auto;
+    padding: 1%;
+    width: 66.67rem;
+    height: 23rem;
+    border: 0.25rem solid white;
+    color: white;
+    background-color: darkgray;
+    font-weight: bold;
+    max-width: 100%;
+    max-height: auto;
+    margin-top: 5%;
+}
+
+#about-me-img {
+    margin-top: -10rem;
+    float: right;
+}
+
 
 

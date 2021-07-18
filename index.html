@@ -29,15 +29,14 @@
         <span class="mdc-top-app-bar__title">Travels by Locals</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+        <button class="mdc-button mdc-button--raised" id="btn-login" disabled="true" onclick="login()">Login</button>
+        <button class="mdc-button mdc-button--raised" id="btn-logout" disabled="true" onclick="logout()">Logout</button>
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
           aria-label="Favorite">favorite</button>
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Search">search</button>
         <div class="dropdown">
-          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options"
-            onclick="showLeftMenu()">more_vert</button>
+          <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button" aria-label="Options">more_vert</button>
           <div class="right_dropdown" id="right_dropdown">
-            <a id="btn-login" disabled="true" onclick="login()">Log In</a>
-            <a id="btn-logout" disabled="true" onclick="logout()">Log Out</a>
             <a id="profile" disabled="true">My Profile</a>
           </div>
         </div>
@@ -129,7 +128,7 @@
           place</a></span>
     </button>
   </div>
-  <div class="hidden" id="gated-content">
+  <!--<div class="hidden" id="gated-content">
     <p>
       You're seeing this content because you're currently
       <strong>logged in</strong>.
@@ -142,7 +141,7 @@
       User profile:
       <pre id="ipt-user-profile"></pre>
     </label>
-  </div>
+  </div>-->
   <div>
     <a href="https://icons8.com/icon/ExjiaVS3corO/around-the-globe">Around the Globe icon by Icons8</a>
   </div>
@@ -150,9 +149,9 @@
 <br>
 <footer id="contact">
   <ul>
-    <li>Contact</li>
-    <li>E-mail</li>
-    <li>About Me</li>
+    <li>Contact:</li>
+    <li>kate@arvay.cz</li>
+    <li><a href="./about_me.html">About Me</a></li>
   </ul>
 </footer>
 
