@@ -56,6 +56,13 @@ function loginPopUp() {
   }
 }
 
+function createProfileRedirect() {
+  let createProfileBtn = document.getElementById("btn-createProfile");
+  createProfileBtn.onclick = function() {
+    window.location.href = "./signup.html";
+  }
+}
+
 
 
 

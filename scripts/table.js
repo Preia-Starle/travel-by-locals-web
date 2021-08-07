@@ -23,7 +23,7 @@ function displayResults() {
     results.innerHTML +=
       `<div class="result" id="result"> 
             <table class="table" id="table"> 
-            <tr><td class="leftCell">Username:</td><td class="rightCell"> ${arr1[i].username} </td><td id="edit_delete"><span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span><span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span></td></tr> 
+            <tr><td class="leftCell">Username:</td><td class="rightCell"> ${arr1[i].username} </td><td id="edit_delete"><span class="material-icons" id="edit" onclick="editItem(${[i]})">create</span><span class="material-icons" id="delete" onclick="deletePopUp(${[i]})">clear</span><span class="material-icons" id="share">share</span></tr></td>
             <tr><td class="leftCell">My City:</td><td class="rightCell"> ${arr1[i].city} </td></tr>
             <!--<tr><td class="leftCell">Profile Picture:</td><td class="rightCell"> ${arr1[i].profile_picture} </td></tr>--> 
             <tr><td class="leftCell">Interests:</td><td class="rightCell"> ${arr1[i].interests} </td></tr> 
