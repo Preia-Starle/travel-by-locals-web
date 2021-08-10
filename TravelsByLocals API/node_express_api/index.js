@@ -7,6 +7,7 @@ const app = express();
 const PORT = 5000;
 
 import sql from 'mssql';
+import { getUsers, getUser, createUser, updateUser } from './controllers/users.js';
 
 const config =
 {
@@ -25,23 +26,7 @@ sql.on("error", err => {
     console.log(err.message);
 })
 
-
-async function getDBUsersAsyncFunction() {
-    try {
-        let pool = await sql.connect(config);
-        let result1 = await pool.request().query('select * from Users');
-        console.log("The fucking DB connected you fucker!!!")
-        console.log(result1);
-        sql.close;
-    }
-    catch (err) {
-        console.log(err.message);
-        sql.close;
-
-    }
-}
-
-getDBUsersAsyncFunction();
+getUsers();
 
 app.use(express.json());
 app.use(express.urlencoded({

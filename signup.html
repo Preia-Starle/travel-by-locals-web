@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="./styles/styles.css" rel="stylesheet">
     <link rel="shortcut icon" type="image/jpg" href="https://img.icons8.com/color-glass/64/000000/around-the-globe.png"/>
+    <script type="text/javascript" src="./signup.js" defer></script>
     <script type="text/javascript" src="" defer></script>
 </head>
 
 <body>
-    <form action="./profile_page.html" method="POST" target="_blank" class="form" id="signupForm">
+    <form action="./signup" method="POST" target="_blank" class="form" id="signupForm">
         <h2 id="create-profile">Create a Profile</h2>
         <label class="mdc-text-field mdc-text-field--filled" for="username">
             <span class="mdc-text-field__ripple" class="form-title">Username:</span>
@@ -25,6 +26,14 @@
             <br>
             <br>
         </label>
+        <br>
+        <br>
+        <label class="mdc-text-field mdc-text-field--filled" for="city">
+            <span class="mdc-text-field__ripple">My City</span>
+            <span class="mdc-floating-label" id="my-label-id"></span>
+            <input id="city" class="mdc-text-field__input" type="text" aria-labelledby="my-label-id" name="city" placeholder="My City" type="number"; maxLength="33"; oninput="maxLength()"> 
+            <span class="mdc-line-ripple"></span>
+          </label>
         <br>
         <br>
         <button class="mdc-button">
