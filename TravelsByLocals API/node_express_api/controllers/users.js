@@ -16,15 +16,22 @@ const config =
     }
 };
 
+let dbConnect = sql.connect(config, function(err) {
+    if (err) throw err;
+    console.log('connected')
+  });
+  
+  
+
 sql.on("error", err => {
     console.log(err.message);
-})
+});
 
 export const getUsers = async function (req, res) {
     try {
-        let pool = await sql.connect(config);
-        let result1 = await pool.request().query('select * from Users');
+        let result1 = await dbConnect.request().query('select * from Users');
         console.log(result1);
+        res.send(result1);
         sql.close;
     }
     catch (err) {
@@ -36,12 +43,14 @@ export const getUsers = async function (req, res) {
 
 export const createUser = async function (req, res) {
     try {
-        sql.connect(config);
-        let pool = await sql.connect(config);
-        await pool.request().query("insert into Users (Username, MyCity, Interests, AboutMe) VALUES ('Peter','Aarhus', 'sports','I am quite tall')");
-        console.log("User inserted");
+        let username = req.body.Username;
+        let myCity = req.body.MyCity;
+        let interests = req.body.Interests;
+        let aboutMe = req.body.AboutMe;
+        let result1 = await dbConnect.request().query("insert into Users (Username, MyCity, Interests, AboutMe) VALUES ("+username+","+myCity+", "+interests+","+aboutMe+")");
+        console.log(result1);
+        res.send(result1);
         sql.close;
-
     }
     catch (err) {
         console.log(err.message);
@@ -53,10 +62,9 @@ export const createUser = async function (req, res) {
 
 export const getUser = async function (req, res) {
     try {
-        let pool = await sql.connect(config);
-        let result1 = await pool.request().query(`select * from Users where UserID = 1`);
+        let result1 = await dbConnect.request().query(`select * from Users where UserID = 1`);
         console.log(result1);
-        sql.close;
+        res.send(result1);
     }
     catch (err) {
         console.log(err.message);
@@ -67,10 +75,9 @@ export const getUser = async function (req, res) {
 
 export const deleteUser = async function (req, res) {
     try {
-        let pool = await sql.connect(config);
-        let result1 = await pool.request().query(`delete * from Users where UserID = 1`);
+        let result1 = await dbConnect.request().query(`delete * from Users where UserID = 1`);
         console.log(result1);
-        sql.close;
+        res.send(result1);
     }
     catch (err) {
             console.log(err.message);
@@ -80,9 +87,9 @@ export const deleteUser = async function (req, res) {
 
 export const updateUser = async function (req, res) {
     try {
-        let pool = await sql.connect(config);
-        await pool.request().query("UPDATE Users SET MyCity = 'Lund' WHERE MyCity = 'Aarhus'");
-        sql.close;
+        let result1 = await dbConnect.request().query("UPDATE Users SET MyCity = 'Lund' WHERE MyCity = 'Aarhus'");
+        console.log(result1);
+        res.send(result1);
     }
     catch (err) {
         console.log(err.message);
