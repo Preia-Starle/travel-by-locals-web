@@ -1,5 +1,6 @@
 import express from 'express';
 import bodyParser from 'body-parser';
+import cors from 'cors';
 
 import usersRoutes from './routes/users.js';
 
@@ -15,6 +16,9 @@ sql.on("error", err => {
 app.use(express.json());
 app.use(express.urlencoded({
   extended: true
+}));
+app.use(cors({
+  origin: '*'
 }));
 
 app.use('/users', usersRoutes);

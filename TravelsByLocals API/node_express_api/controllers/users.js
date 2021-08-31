@@ -47,8 +47,7 @@ export const createUser = async function (req, res) {
         let myCity = req.body.MyCity;
         let interests = req.body.Interests;
         let aboutMe = req.body.AboutMe;
-        let result1 = await dbConnect.request().query("insert into Users (Username, MyCity, Interests, AboutMe) VALUES ("+username+","+myCity+", "+interests+","+aboutMe+")");
-        console.log(result1);
+        let result1 = await dbConnect.request().query("insert into Users (Username, MyCity, Interests, AboutMe) VALUES ('"+username+"', '"+myCity+"', '"+interests+"', '"+aboutMe+"')");
         res.send(result1);
         sql.close;
     }
@@ -60,9 +59,10 @@ export const createUser = async function (req, res) {
 }
     
 
-export const getUser = async function (req, res) {
+export const getUser = async function (req, res, userId) {
     try {
-        let result1 = await dbConnect.request().query(`select * from Users where UserID = 1`);
+        userId = req.params.id;
+        let result1 = await dbConnect.request().query("select * from Users where UserID = ('"+userId+"')");
         console.log(result1);
         res.send(result1);
     }
@@ -73,9 +73,10 @@ export const getUser = async function (req, res) {
     }
 }
 
-export const deleteUser = async function (req, res) {
+export const deleteUser = async function (req, res, userId) {
     try {
-        let result1 = await dbConnect.request().query(`delete * from Users where UserID = 1`);
+        userId = req.params.id;
+        let result1 = await dbConnect.request().query("delete * from Users where UserID = ('"+userId+"')");
         console.log(result1);
         res.send(result1);
     }
