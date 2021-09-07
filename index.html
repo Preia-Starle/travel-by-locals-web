@@ -29,7 +29,17 @@
         <span class="mdc-top-app-bar__title">Travels by Locals</span>
       </section>
       <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <button class="mdc-button mdc-button--raised" id="btn-createProfile" disabled="true" onclick="createProfileRedirect()">Create Profile</button>
+        <div class="hidden" id="gated-content">
+          <button class="mdc-button mdc-button--raised" id="btn-createProfile" disabled="true" onclick="createProfileRedirect()">Create Profile</button>
+          <!--<label>
+            Access token:
+            <pre id="ipt-access-token"></pre>
+          </label>
+          <label>
+            User profile:
+            <pre id="ipt-user-profile"></pre>
+          </label>-->
+        </div>
         <button class="mdc-button mdc-button--raised" id="btn-login" disabled="true" onclick="login()">Login</button>
         <button class="mdc-button mdc-button--raised" id="btn-logout" disabled="true" onclick="logout()">Logout</button>
         <button class="material-icons mdc-top-app-bar__action-item mdc-icon-button"
@@ -129,20 +139,6 @@
           place</a></span>
     </button>
   </div>
-  <!--<div class="hidden" id="gated-content">
-    <p>
-      You're seeing this content because you're currently
-      <strong>logged in</strong>.
-    </p>
-    <label>
-      Access token:
-      <pre id="ipt-access-token"></pre>
-    </label>
-    <label>
-      User profile:
-      <pre id="ipt-user-profile"></pre>
-    </label>
-  </div>-->
   <div>
     <a href="https://icons8.com/icon/ExjiaVS3corO/around-the-globe">Around the Globe icon by Icons8</a>
   </div>
