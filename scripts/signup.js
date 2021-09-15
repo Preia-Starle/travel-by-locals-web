@@ -11,7 +11,7 @@ document.getElementById("submitRegAjax").onclick = function(e) {
     "AboutMe": aboutMe
   };
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", 'https://kate.arvay.cz:3000/users');
+  xhr.open("POST", 'https://travelsbylocalsnodeexpresswebapp.azurewebsites.net:3000/users');
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.send(JSON.stringify(data));
 };

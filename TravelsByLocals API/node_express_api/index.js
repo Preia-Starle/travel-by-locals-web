@@ -23,5 +23,5 @@ app.use(cors({
 
 app.use('/users', usersRoutes);
 
-app.listen(PORT, () => console.log(`Server running on port: https://kate.arvay.cz:${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port: https://travelsbylocalsnodeexpresswebapp.azurewebsites.net:${PORT}`));
 
