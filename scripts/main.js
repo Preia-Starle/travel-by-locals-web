@@ -61,14 +61,10 @@ function createProfileRedirect() {
   createProfileBtn.onclick = function() {
     window.location.href = "./signup.html";
   }
+  if (createProfileBtn.disabled === true) {
+    alert("You need to sign up to create a profile. Click login button");
+  } 
 }
-
-function createProfileAlert() {
-  if (document.getElementById("btn-createProfile").disabled === true) {
-      alert("You need to sign up to create a profile. Click login button");
-    } 
-  }
-
 
 
 
