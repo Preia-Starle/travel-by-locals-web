@@ -60,8 +60,12 @@ function createProfileRedirect() {
   let createProfileBtn = document.getElementById("btn-createProfile");
   createProfileBtn.onclick = function() {
     window.location.href = "./signup.html";
-  } 
+  }
+  if (createProfileBtn.disabled) {
+    alert("You need to signup to create a profile. Click login");
+  }
 }
+
 
 
 
