@@ -61,7 +61,13 @@ const updateUI = async () => {
   } else {
     document.getElementById("gated-content").classList.add("hidden");
   }
+
+  if (!isAuthenticated) {
+    document.getElementById("btn-createProfile").onclick = alert("You need to sign up to create a profile. Click login.")
+  }
 };
+
+
 
 const login = async () => {
   await auth0.loginWithRedirect({
